@@ -18,7 +18,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
 
   return team.save()
     .then((result) => res.status(201).json({
-      game: result,
+      team: result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
