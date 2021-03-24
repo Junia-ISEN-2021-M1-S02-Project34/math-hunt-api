@@ -8,6 +8,7 @@ import EnigmaRoutes from './enigma.routes';
 import AnswerRoutes from './answer.routes';
 import HintRoutes from './hint.routes';
 import PropositionRoutes from './proposition.routes';
+import AdminRoutes from './admin.routes';
 
 const router = express.Router();
 
@@ -18,5 +19,6 @@ router.use('/enigmas', EnigmaRoutes);
 router.use('/answers', AnswerRoutes);
 router.use('/hints', HintRoutes);
 router.use('/propositions', PropositionRoutes);
+router.use('/admins', AdminRoutes);
 
 export default router;
