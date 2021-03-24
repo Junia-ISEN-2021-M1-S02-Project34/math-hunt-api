@@ -68,7 +68,7 @@ const updateAnswer = (req: Request, res: Response): void => {
   } = req.body;
 
   const answer = new Answer({
-    _id: req.body.id,
+    _id: req.params.id,
     isMcq,
     solution,
     attemptsNumber,
