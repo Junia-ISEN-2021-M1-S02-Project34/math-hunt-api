@@ -29,7 +29,7 @@ const getAnswerById = (req: Request, res: Response): void => {
   Answer.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      team: result,
+      answer: result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
