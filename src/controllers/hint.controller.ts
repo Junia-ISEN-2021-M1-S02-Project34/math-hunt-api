@@ -70,7 +70,7 @@ const updateHint = (req: Request, res: Response): void => {
   } = req.body;
 
   const hint = new Hint({
-    _id: req.body.id,
+    _id: req.params.id,
     name,
     text,
     rank,
