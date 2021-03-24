@@ -10,7 +10,7 @@ const EnigmaSchema: Schema = new Schema(
     positionY: { type: Number, required: true },
     scoreValue: { type: Number, required: true },
     isActive: { type: Boolean, required: true, default: true },
-    enigmaGroupId: { type: String, required: true },
+    geoGroupId: { type: Schema.Types.ObjectId, ref: 'GeoGroup' },
   },
   {
     timestamps: true,
