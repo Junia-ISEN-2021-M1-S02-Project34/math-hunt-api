@@ -4,13 +4,13 @@ import Answer from '../models/answer.model';
 
 const createAnswer = async (req: Request, res: Response): Promise<Response> => {
   const {
-    enigmaId, type, solution, attemptsNumber,
+    enigmaId, isMcq, solution, attemptsNumber,
   } = req.body;
 
   const answer = new Answer({
     _id: new mongoose.Types.ObjectId(),
     enigmaId,
-    type,
+    isMcq,
     solution,
     attemptsNumber,
   });
@@ -64,12 +64,12 @@ const getAnswerByEnigmaId = (req: Request, res: Response): void => {
 
 const updateAnswer = (req: Request, res: Response): void => {
   const {
-    type, solution, attemptsNumber,
+    isMcq, solution, attemptsNumber,
   } = req.body;
 
   const answer = new Answer({
     _id: req.body.id,
-    type,
+    isMcq,
     solution,
     attemptsNumber,
   });
