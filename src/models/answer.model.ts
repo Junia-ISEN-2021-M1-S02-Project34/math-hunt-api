@@ -3,7 +3,7 @@ import IAnswer from '../interfaces/answer.interface';
 
 const AnswerSchema: Schema = new Schema(
   {
-    enigmaId: { type: String, unique: true, required: true },
+    enigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
     isMcq: { type: Boolean, required: true },
     solution: { type: String, required: true },
     attemptsNumber: { type: Number, required: true },
