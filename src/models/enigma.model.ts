@@ -11,6 +11,8 @@ const EnigmaSchema: Schema = new Schema(
     scoreValue: { type: Number, required: true },
     isActive: { type: Boolean, required: true, default: true },
     geoGroupId: { type: Schema.Types.ObjectId, ref: 'GeoGroup' },
+    isLinked: { type: Boolean, default: false },
+    nextEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
   },
   {
     timestamps: true,

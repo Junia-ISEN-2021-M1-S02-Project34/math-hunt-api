@@ -9,4 +9,6 @@ export default interface IEnigma extends Document {
   scoreValue: number;
   isActive: boolean;
   geoGroupId: string;
+  isLinked: boolean;
+  nextEnigmaId: string;
 }
