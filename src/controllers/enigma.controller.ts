@@ -34,7 +34,7 @@ const getEnigmaById = (req: Request, res: Response): void => {
   Enigma.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      game: result,
+      enigma: result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -59,7 +59,7 @@ const getEnigmasByGeoGroupId = (req: Request, res: Response): void => {
   Team.find({ geoGroupId: req.params.id })
     .exec()
     .then((results) => res.status(200).json({
-      teams: results,
+      enigmas: results,
       count: results.length,
     }))
     .catch((e) => res.status(500).json({
