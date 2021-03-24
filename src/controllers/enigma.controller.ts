@@ -5,7 +5,7 @@ import Team from '../models/team.model';
 
 const createEnigma = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, description, question, positionX, positionY, scoreValue, isActive, enigmaGroupId,
+    name, description, question, positionX, positionY, scoreValue, isActive, geoGroupId,
   } = req.body;
 
   const enigma = new Enigma({
@@ -17,7 +17,7 @@ const createEnigma = async (req: Request, res: Response): Promise<Response> => {
     positionY,
     scoreValue,
     isActive,
-    enigmaGroupId,
+    geoGroupId,
   });
 
   return enigma.save()
@@ -70,7 +70,7 @@ const getEnigmasByGeoGroupId = (req: Request, res: Response): void => {
 
 const updateEnigma = (req: Request, res: Response): void => {
   const {
-    name, description, question, positionX, positionY, scoreValue, isActive, enigmaGroupId,
+    name, description, question, positionX, positionY, scoreValue, isActive, geoGroupId,
   } = req.body;
 
   const enigma = new Enigma({
@@ -82,7 +82,7 @@ const updateEnigma = (req: Request, res: Response): void => {
     positionY,
     scoreValue,
     isActive,
-    enigmaGroupId,
+    geoGroupId,
   });
 
   Enigma.updateOne({ _id: req.params.id }, enigma)
