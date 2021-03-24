@@ -6,6 +6,7 @@ import TeamRoutes from './team.routes';
 import GeoGroupRoutes from './geoGroup.routes';
 import EnigmaRoutes from './enigma.routes';
 import AnswerRoutes from './answer.routes';
+import HintRoutes from './hint.routes';
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.use('/teams', TeamRoutes);
 router.use('/geoGroups', GeoGroupRoutes);
 router.use('/enigmas', EnigmaRoutes);
 router.use('/answers', AnswerRoutes);
+router.use('/hints', HintRoutes);
 
 export default router;
