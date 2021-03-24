@@ -70,7 +70,7 @@ const updateTeam = (req: Request, res: Response): void => {
   } = req.body;
 
   const team = new Team({
-    _id: req.body.id,
+    _id: req.params.id,
     score,
   });
 
