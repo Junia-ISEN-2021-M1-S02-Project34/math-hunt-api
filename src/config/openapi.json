@@ -220,6 +220,59 @@
               		}
            		}
         	}
-  		}
+  		},
   	}
+  },
+  "enigma/create/enigma":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Enigma",
+        "operationId": "post-enigma",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Admin Enigma",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Enigma"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  }
 }
+
