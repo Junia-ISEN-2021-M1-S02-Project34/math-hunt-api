@@ -5,6 +5,7 @@ const EnigmaSchema: Schema = new Schema(
   {
     name: { type: String, unique: true, required: true },
     description: { type: String, required: false },
+    pictureUrl: { type: String, required: false },
     question: { type: String, required: true },
     positionX: { type: Number, required: true },
     positionY: { type: Number, required: true },

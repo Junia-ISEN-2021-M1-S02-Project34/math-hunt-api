@@ -5,13 +5,14 @@ import Team from '../models/team.model';
 
 const createEnigma = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, description, question, positionX, positionY, scoreValue, isActive, geoGroupId,
+    name, description, pictureUrl, question, positionX, positionY, scoreValue, isActive, geoGroupId,
   } = req.body;
 
   const enigma = new Enigma({
     _id: new mongoose.Types.ObjectId(),
     name,
     description,
+    pictureUrl,
     question,
     positionX,
     positionY,
@@ -70,13 +71,14 @@ const getEnigmasByGeoGroupId = (req: Request, res: Response): void => {
 
 const updateEnigma = (req: Request, res: Response): void => {
   const {
-    name, description, question, positionX, positionY, scoreValue, isActive, geoGroupId,
+    name, description, pictureUrl, question, positionX, positionY, scoreValue, isActive, geoGroupId,
   } = req.body;
 
   const enigma = new Enigma({
     _id: req.params.id,
     name,
     description,
+    pictureUrl,
     question,
     positionX,
     positionY,
