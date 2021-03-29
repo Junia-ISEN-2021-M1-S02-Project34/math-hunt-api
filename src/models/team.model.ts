@@ -8,7 +8,7 @@ const TeamSchema: Schema = new Schema(
     score: { type: Number, default: 0 },
     gameId: { type: String, required: true },
     enigmaList: [{ type: Schema.Types.ObjectId, ref: 'EnigmasGroup' }],
-    currentEnigma: { type: Schema.Types.ObjectId, ref: 'Enigma' },
+    currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
   },
   {
     timestamps: true,

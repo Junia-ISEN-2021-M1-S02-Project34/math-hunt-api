@@ -6,5 +6,5 @@ export default interface ITeam extends Document {
   score: number;
   gameId: string;
   enigmaList: string[];
-  currentEnigma: string;
+  currentEnigmaId: string;
 }

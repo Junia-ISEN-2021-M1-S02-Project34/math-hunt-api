@@ -13,7 +13,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
     password,
     gameId,
     enigmaList,
-    currentEnigma: enigmaList[0][0],
+    currentEnigmaId: enigmaList[0][0],
   });
 
   return team.save()
