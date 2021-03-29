@@ -1,41 +1,58 @@
 {
   "openapi": "3.0.0",
-  "info": {
+  "info": 
+  {
     "title": "math-hunt-api",
     "version": "1.0",
     "description": "API du jeu de piste mathématique",
-    "contact": {
+    "contact": 
+    {
       "name": "ISEN Lille"
     }
   },
-  "paths": {
-    "/answer/create/answer": {
-      "post": {
+  "paths": 
+  {
+    "/answer/create/answer": 
+    {
+      "post": 
+      {
         "summary": "Create New Answer",
         "operationId": "post-answer",
-        "responses": {
-          "201": {
+        "responses": 
+        {
+          "201": 
+          {
             "description": "Answer Created",
-            "content": {
-              "application/json": {
-                "schema": {
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
                   "$ref": "#/components/schemas/Answer"
                 },
                 "examples": {}
               }
             }
           },
-          "500": {
+          "500": 
+          {
             "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
                   "type": "object",
-                  "properties": {
-                    "error": {
+                  "properties": 
+                  {
+                    "error": 
+                    {
                       "type": "string"
                     },
-                    "": {
+                    "": 
+                    {
                       "type": "object"
                     }
                   }
@@ -44,26 +61,36 @@
             }
           }
         },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
                 "type": "object",
-                "properties": {
-                  "enigmaId": {
+                "properties": 
+                {
+                  "enigmaId": 
+                  {
                     "type": "string"
                   },
-                  "isMcq": {
+                  "isMcq": 
+                  {
                     "type": "boolean"
                   },
-                  "solution": {
+                  "solution": 
+                  {
                     "type": "string"
                   },
-                  "attemptsNumber": {
+                  "attemptsNumber": 
+                  {
                     "type": "number"
                   }
                 },
-                "required": [
+                "required": 
+                [
                   "enigmaId",
                   "isMcq",
                   "solution",
@@ -76,40 +103,51 @@
           "description": "Post the necessary fields for the API to create a new answer."
         },
         "description": "Create a new answer.",
-        "tags": [
+        "tags": 
+        [
           "/answer"
         ]
       },
       "parameters": []
     }
   },
-  "components": {
-    "schemas": {
-      "Answer": {
+  "components": 
+  {
+    "schemas": 
+    {
+      "Answer": 
+      {
         "title": "Answer",
         "type": "object",
         "description": "",
         "x-examples": {},
-        "properties": {
-          "_id": {
+        "properties": 
+        {
+          "_id": 
+          {
             "type": "string",
             "description": ""
           },
-          "enigmaId": {
+          "enigmaId":
+          {
             "type": "string"
           },
-          "isMcq": {
+          "isMcq": 
+          {
             "type": "boolean"
           },
-          "solution": {
+          "solution": 
+          {
             "type": "string",
             "format": "email"
           },
-          "attemptsNumber": {
+          "attemptsNumber": 
+          {
             "type": "integer"
           }
         },
-        "required": [
+        "required": 
+        [
           "_id",
           "enigmaId",
           "isMcq",
@@ -120,16 +158,68 @@
     },
     "securitySchemes": {}
   },
-  "servers": [
+  "servers": 
+  [
     {
       "url": "http://localhost:3000/api",
       "description": ""
     }
   ],
   "security": [],
-  "tags": [
+  "tags": 
+  [
     {
       "name": "/answer"
     }
-  ]
+  ],
+  "admin/create/admin":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Admin",
+        "operationId": "post-admin",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Admin Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Admin"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		}
+  	}
 }
