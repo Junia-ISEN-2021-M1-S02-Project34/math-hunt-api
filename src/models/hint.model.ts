@@ -7,7 +7,7 @@ const HintSchema: Schema = new Schema(
     text: { type: String, required: true },
     rank: { type: Number, required: true },
     penalty: { type: Number, required: true },
-    propositionToRemove: { type: String },
+    propositionToRemove: { type: Schema.Types.ObjectId, ref: 'Proposition' },
     enigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
   },
   {
