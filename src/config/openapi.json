@@ -148,11 +148,21 @@
         },
         "required": 
         [
-          "_id",
-          "enigmaId",
-          "isMcq",
-          "solution",
-          "attemptsNumber"
+        "_id",
+        "enigmaId",
+        "isMcq",
+        "solution",
+        "attemptsNumber",
+        "name",
+    	"description",
+    	"pictureUrl",
+    	"question",
+    	"positionX",
+    	"positionY",
+    	"scoreValue",
+    	"isActive",
+    	"geoGroupId",
+    	"password"
         ]
       }
     },
