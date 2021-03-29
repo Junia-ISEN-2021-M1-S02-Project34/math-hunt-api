@@ -162,7 +162,8 @@
     	"scoreValue",
     	"isActive",
     	"geoGroupId",
-    	"password"
+    	"password",
+    	"radius"
         ]
       }
     },
@@ -243,7 +244,7 @@
         {
         	"201": 
         	{
-            	"description": "Admin Enigma",
+            	"description": "Enigma Created",
             	"content": 
             	{
               		"application/json": 
@@ -251,6 +252,261 @@
                 		"schema": 
                 		{
                   			"$ref": "#/components/schemas/Enigma"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  },
+  "game/create/game":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Game",
+        "operationId": "post-game",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Game Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Game"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  },
+  "geoGroup/create/geoGroup":
+  {
+  	"post":
+  	{
+  		"summary": "Create New GeoGroup",
+        "operationId": "post-geoGroup",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "GeoGroup Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/GeoGroup"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  },
+  "hint/create/hint":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Hint",
+        "operationId": "post-hint",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Hint Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Hint"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  },
+  "proposition/create/proposition":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Proposition",
+        "operationId": "post-proposition",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Proposition Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Proposition"
+                		},
+                		"examples": {}
+              		}
+            	}
+          	},
+          	"500": 
+          	{
+            	"description": "Error",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"type": "object",
+                  			"properties": 
+                  			{
+                    			"error": 
+                    			{
+                      				"type": "string"
+                    			},
+                    			"": 
+                    			{
+                      				"type": "object"
+                    			}
+                  			}
+                		}
+              		}
+           		}
+        	}
+  		},
+  	},
+  },
+  "team/create/team":
+  {
+  	"post":
+  	{
+  		"summary": "Create New Team",
+        "operationId": "post-team",
+        "responses":
+        {
+        	"201": 
+        	{
+            	"description": "Team Created",
+            	"content": 
+            	{
+              		"application/json": 
+              		{
+                		"schema": 
+                		{
+                  			"$ref": "#/components/schemas/Team"
                 		},
                 		"examples": {}
               		}
