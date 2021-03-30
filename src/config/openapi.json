@@ -110,6 +110,327 @@
       },
       "parameters": []
     },
+    "/answer/get/answers": 
+    {
+      "get": 
+      {
+        "summary": "Get All Answers",
+        "operationId": "get-answers",
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Got all answers",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get all answers.",
+        "tags": 
+        [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    },
+    "/answer/get/answer/{_id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Answer by ID",
+        "operationId": "get-answerbyid",
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Got answer by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Got answer by ID.",
+        "tags": 
+        [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    },
+    "/answer/get/answer/enigma/{_id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Answer by Enigma ID",
+        "operationId": "get-answerbyenigmaid",
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Got answer by enigma ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get answer by enigma ID.",
+        "tags": 
+        [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    },
+    "/answer/delete/answer/{_id}": 
+    {
+      "delete": 
+      {
+        "summary": "Delete Answer by ID",
+        "operationId": "delete-answerbyid",
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Answer Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Delete answer by ID.",
+        "tags": 
+        [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    },
+    "/answer/update/answer/{_id}": 
+    {
+      "put": 
+      {
+        "summary": "Update Answer by ID",
+        "operationId": "put-answerbyid",
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Answer by ID updated",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "isMcq": 
+                  {
+                    "type": "boolean"
+                  },
+                  "solution": 
+                  {
+                    "type": "string"
+                  },
+                  "attemptsNumber": 
+                  {
+                    "type": "number"
+                  }
+                },
+                "required": 
+                [
+                  "isMcq",
+                  "solution",
+                  "attemptsNumber"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Post the necessary fields for the API to update an answer by ID."
+        },
+        "description": "Update answer by ID.",
+        "tags": 
+        [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    },
     "/admin/create/admin": 
     {
       "post": 
