@@ -167,7 +167,7 @@
       },
       "parameters": []
     },
-    "/answer/get/answer/{_id}": 
+    "/answer/get/answer/{id}": 
     {
       "get": 
       {
@@ -224,7 +224,7 @@
       },
       "parameters": []
     },
-    "/answer/get/answer/enigma/{_id}": 
+    "/answer/get/answer/enigma/{id}": 
     {
       "get": 
       {
@@ -281,7 +281,7 @@
       },
       "parameters": []
     },
-    "/answer/delete/answer/{_id}": 
+    "/answer/delete/answer/{id}": 
     {
       "delete": 
       {
@@ -338,7 +338,7 @@
       },
       "parameters": []
     },
-    "/answer/update/answer/{_id}": 
+    "/answer/update/answer/{id}": 
     {
       "put": 
       {
@@ -678,6 +678,11 @@
         "x-examples": {},
         "properties": 
         {
+          "_id": 
+          {
+            "type": "string",
+            "description": ""
+          },
           "name": 
           {
             "type": "string"
@@ -725,6 +730,7 @@
         },
         "required": 
         [
+        "_id",
         "name",
         "description",
         "pictureUrl",
