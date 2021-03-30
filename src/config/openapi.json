@@ -197,6 +197,89 @@
         ]
       },
       "parameters": []
+    },
+    "/admin/update/admin/{username}": 
+    {
+      "put": 
+      {
+        "summary": "Update Admin Password",
+        "operationId": "put-admin",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Admin Updated",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Admin"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "password": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "password"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update admin password."
+        },
+        "description": "Update admin password.",
+        "tags": 
+        [
+          "/admin"
+        ]
+      },
+      "parameters": []
     }
   },
   "components": 
@@ -211,10 +294,6 @@
         "x-examples": {},
         "properties": 
         {
-          "username":
-          {
-            "type": "string"
-          },
           "password": 
           {
             "type": "string"
@@ -222,7 +301,6 @@
         },
         "required": 
         [
-        "username",
         "password"
         ]
       }
