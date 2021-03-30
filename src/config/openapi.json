@@ -203,7 +203,7 @@
   {
     "schemas": 
     {
-      "Answer": 
+      "Admin": 
       {
         "title": "Admin",
         "type": "object",
@@ -240,7 +240,9 @@
   "tags": 
   [
     {
-      "name": "/answer",
+      "name": "/answer"
+    },
+    {
       "name": "/admin"
     }
   ]
