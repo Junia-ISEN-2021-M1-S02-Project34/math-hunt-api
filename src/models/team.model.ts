@@ -7,7 +7,7 @@ const TeamSchema: Schema = new Schema(
     password: { type: String, required: true },
     score: { type: Number, default: 0 },
     gameId: { type: String, required: true },
-    enigmaList: [{ type: Schema.Types.ObjectId, ref: 'EnigmasGroup' }],
+    progression: [{ enigmaId: { type: Schema.Types.ObjectId, ref: 'EnigmasGroup' }, done: { type: Boolean, default: false }, score: { type: Number, default: 0 } }],
     currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
   },
   {

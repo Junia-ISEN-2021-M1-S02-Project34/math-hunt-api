@@ -4,7 +4,7 @@ import Team from '../models/team.model';
 
 const createTeam = async (req: Request, res: Response): Promise<Response> => {
   const {
-    username, password, gameId, enigmaList,
+    username, password, gameId, progression,
   } = req.body;
 
   const team = new Team({
@@ -12,8 +12,8 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
     username,
     password,
     gameId,
-    enigmaList,
-    currentEnigmaId: enigmaList[0][0],
+    progression,
+    currentEnigmaId: progression[0].enigmaId,
   });
 
   return team.save()
