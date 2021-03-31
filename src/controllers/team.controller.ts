@@ -18,7 +18,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
 
   return team.save()
     .then((result) => res.status(201).json({
-      team: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -30,7 +30,7 @@ const getTeamById = (req: Request, res: Response): void => {
   Team.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      team: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,

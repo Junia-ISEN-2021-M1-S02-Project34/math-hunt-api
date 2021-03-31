@@ -15,7 +15,7 @@ const createProposition = async (req: Request, res: Response): Promise<Response>
 
   return proposition.save()
     .then((result) => res.status(201).json({
-      proposition: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -27,7 +27,7 @@ const getPropositionById = (req: Request, res: Response): void => {
   Proposition.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      proposition: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -52,7 +52,7 @@ const getPropositionsByAnswerId = (req: Request, res: Response): void => {
   Proposition.find({ answerId: req.params.id })
     .exec()
     .then((result) => res.status(200).json({
-      proposition: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,

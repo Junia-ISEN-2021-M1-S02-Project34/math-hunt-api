@@ -18,7 +18,7 @@ const createGeoGroup = async (req: Request, res: Response): Promise<Response> =>
 
   return geoGroup.save()
     .then((result) => res.status(201).json({
-      geoGroup: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -30,7 +30,7 @@ const getGeoGroupById = (req: Request, res: Response): void => {
   GeoGroup.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      geoGroup: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,

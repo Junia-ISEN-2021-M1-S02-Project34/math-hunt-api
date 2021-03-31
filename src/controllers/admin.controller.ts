@@ -13,7 +13,7 @@ const createAdmin = async (req: Request, res: Response): Promise<Response> => {
 
   return admin.save()
     .then((result) => res.status(201).json({
-      admin: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,

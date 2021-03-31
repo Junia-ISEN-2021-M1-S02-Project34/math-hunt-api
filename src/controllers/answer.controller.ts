@@ -17,7 +17,7 @@ const createAnswer = async (req: Request, res: Response): Promise<Response> => {
 
   return answer.save()
     .then((result) => res.status(201).json({
-      answer: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -29,7 +29,7 @@ const getAnswerById = (req: Request, res: Response): void => {
   Answer.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json({
-      answer: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -54,7 +54,7 @@ const getAnswerByEnigmaId = (req: Request, res: Response): void => {
   Answer.find({ enigmaId: req.params.id })
     .exec()
     .then((result) => res.status(200).json({
-      answer: result,
+      result,
     }))
     .catch((e) => res.status(500).json({
       error: e.message,
