@@ -724,6 +724,63 @@
         ]
       },
       "parameters": []
+    },
+    "/enigma/get/enigmas": 
+    {
+      "post": 
+      {
+        "summary": "Get All Enigmas",
+        "operationId": "get-enigmas",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All Enigmas",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Enigma"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Got all enigmas.",
+        "tags": 
+        [
+          "/enigma"
+        ]
+      },
+      "parameters": []
     }
   },
   "components": 
