@@ -601,6 +601,129 @@
         ]
       },
       "parameters": []
+    },
+    "/enigma/create/enigma": 
+    {
+      "post": 
+      {
+        "summary": "Create New Enigma",
+        "operationId": "create-enigma",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "New Enigma Created",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Enigma"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "description": 
+                  {
+                    "type": "string"
+                  },
+                  "pictureUrl": 
+                  {
+                    "type": "string"
+                  },
+                  "question": 
+                  {
+                    "type": "string"
+                  },
+                  "positionX": 
+                  {
+                    "type": "number"
+                  },
+                  "positionY": 
+                  {
+                    "type": "number"
+                  },
+                  "scoreValue": 
+                  {
+                    "type": "number"
+                  },
+                  "isActive": 
+                  {
+                    "type": "boolean"
+                  },
+                  "geoGroupId": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "description",
+                  "pictureUrl",
+                  "question",
+                  "positionX",
+                  "positionY",
+                  "scoreValue",
+                  "isActive",
+                  "geoGroupId"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to create new enigma."
+        },
+        "description": "Create new enigma.",
+        "tags": 
+        [
+          "/enigma"
+        ]
+      },
+      "parameters": []
     }
   },
   "components": 
@@ -762,6 +885,9 @@
     },
     {
       "name": "/admin"
+    },
+    {
+      "name": "/enigma"
     }
   ]
 }
