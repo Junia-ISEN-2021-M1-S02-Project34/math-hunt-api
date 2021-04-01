@@ -1510,6 +1510,109 @@
       },
       "parameters": []
     },
+    "/enigma/create/geoGroup": 
+    {
+      "post": 
+      {
+        "summary": "Create New geoGroup",
+        "operationId": "create-geogroup",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "New geoGroup Created",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/geoGroup"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "positionX": 
+                  {
+                    "type": "number"
+                  },
+                  "positionY": 
+                  {
+                    "type": "number"
+                  },
+                  "radius": 
+                  {
+                    "type": "number"
+                  },
+                  "pictureUrl": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "positionX",
+                  "positionY",
+                  "radius",
+                  "pictureUrl"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to create a new geoGroup."
+        },
+        "description": "Create new geoGroup.",
+        "tags": 
+        [
+          "/geoGroup"
+        ]
+      },
+      "parameters": []
+    },
   },
   "components": 
   {
@@ -1689,6 +1792,50 @@
         "duration"
         ]
       },
+      "geoGroup": 
+      {
+        "title": "Game",
+        "type": "object",
+        "description": "",
+        "x-examples": {},
+        "properties": 
+        {
+          "_id": 
+          {
+            "type": "string",
+            "description": ""
+          },
+          "name": 
+          {
+            "type": "string"
+          },
+          "positionX":
+          {
+            "type": "number"
+          },
+          "positionY":
+          {
+            "type": "number"
+          },
+          "radius":
+          {
+            "type": "number"
+          },
+          "pictureUrl":
+          {
+            "type": "number"
+          }
+        },
+        "required": 
+        [
+        "_id",
+        "name",
+        "positionX",
+        "positionY",
+        "radius",
+        "pictureUrl"
+        ]
+      }
     },
     "securitySchemes": {}
   },
@@ -1713,6 +1860,9 @@
     },
     {
       "name": "/game"
+    },
+    {
+      "name": "/geoGroup"
     }
   ]
 }
