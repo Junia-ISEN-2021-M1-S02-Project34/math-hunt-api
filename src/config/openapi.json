@@ -2322,6 +2322,408 @@
         ]
       },
       "parameters": []
+    },
+    "/proposition/create/proposition": 
+    {
+      "post": 
+      {
+        "summary": "Create New Proposition",
+        "operationId": "create-proposition",
+        "responses": 
+        {
+          "201":
+          {
+            "description": "New Proposition Created",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "text": 
+                  {
+                    "type": "string"
+                  },
+                  "answerId": 
+                  {
+                    "type": "number"
+                  }
+                },
+                "required": 
+                [
+                  "text"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to create a new proposition."
+        },
+        "description": "Create new proposition.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
+    },
+    "/proposition/update/proposition/{id}": 
+    {
+      "put": 
+      {
+        "summary": "Update Proposition by ID",
+        "operationId": "update-propositionbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Proposition Updated by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "text": 
+                  {
+                    "type": "string"
+                  },
+                  "answerId": 
+                  {
+                    "type": "number"
+                  }
+                },
+                "required": 
+                [
+                  "text"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update a proposition by ID."
+        },
+        "description": "Update proposition by ID.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
+    },
+    "/proposition/get/propositions": 
+    {
+      "get": 
+      {
+        "summary": "Get All Propositions",
+        "operationId": "get-propositions",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All Propositions",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get all propositions.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
+    },
+    "/proposition/get/proposition/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Proposition by ID",
+        "operationId": "get-propositionbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Proposition by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get proposition by ID.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
+    },
+    "/proposition/get/answer/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Proposition by Answer ID",
+        "operationId": "get-propositionbyanswerid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Proposition by Answer ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get proposition by answer ID.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
+    },
+    "/proposition/delete/proposition/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Delete Proposition by ID",
+        "operationId": "delete-propositionbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Proposition Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Proposition"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Proposition deleted by ID.",
+        "tags": 
+        [
+          "/proposition"
+        ]
+      },
+      "parameters": []
     }
   },
   "components": 
