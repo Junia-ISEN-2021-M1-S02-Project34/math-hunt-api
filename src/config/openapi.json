@@ -1967,7 +1967,7 @@
                   {
                     "type": "string"
                   },
-                  "enigm4": 
+                  "enigmaId": 
                   {
                     "type": "string"
                   }
@@ -1986,6 +1986,336 @@
           "description": "Put the necessary fields for the API to create a new hint."
         },
         "description": "Create new hint.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    },
+    "/hint/update/hint/{id}": 
+    {
+      "put": 
+      {
+        "summary": "Update Hint by ID",
+        "operationId": "update-hintbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Hint Updated by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "text": 
+                  {
+                    "type": "number"
+                  },
+                  "rank": 
+                  {
+                    "type": "number"
+                  },
+                  "penalty": 
+                  {
+                    "type": "number"
+                  },
+                  "propositionToRemove": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "text",
+                  "rank",
+                  "penalty"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update a hint by ID."
+        },
+        "description": "Update hint by ID.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    },
+    "/hint/get/hints": 
+    {
+      "get": 
+      {
+        "summary": "Get All Hints",
+        "operationId": "get-hints",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All Hints",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get all hints.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    },
+    "/hint/get/hint/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Hint by ID",
+        "operationId": "get-hintbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Hint by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get hint by ID.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    },
+    "/hint/get/hint/enigma/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Hint by Enigma ID",
+        "operationId": "get-hintbyenigmaid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Hint by Enigma ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get hint by enigma ID.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    },
+    "/hint/delete/hint/{id}": 
+    {
+      "delete": 
+      {
+        "summary": "Delete Hint by ID",
+        "operationId": "delete-hintbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Hint Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Hint deleted by ID.",
         "tags": 
         [
           "/hint"
