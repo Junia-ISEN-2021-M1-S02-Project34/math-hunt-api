@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import Enigma from '../models/enigma.model';
 import Team from '../models/team.model';
+import Answer from '../models/answer.model';
+import Proposition from '../models/proposition.model';
 
 const createEnigma = async (req: Request, res: Response): Promise<Response> => {
   const {
@@ -33,6 +35,26 @@ const getEnigmaById = (req: Request, res: Response): void => {
   Enigma.findById(req.params.id)
     .exec()
     .then((result) => res.status(200).json(result))
+    .catch((e) => res.status(500).json({
+      error: e.message,
+      e,
+    }));
+};
+
+const getFullEnigmaById = (req: Request, res: Response): void => {
+  Enigma.findById(req.params.id)
+    .exec()
+    .then((enigma) => {
+      Answer.find({ enigmaId: req.params.id })
+        .exec()
+        .then((answer) => {
+          Proposition.find({ answerId: answer[0].id })
+            .exec()
+            .then((propositions) => {
+              res.status(200).json({ enigma, answer: answer[0], propositions });
+            });
+        });
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
@@ -103,5 +125,5 @@ const deleteEnigma = (req: Request, res: Response): void => {
 };
 
 export default {
-  createEnigma, getEnigmaById, getAllEnigmas, updateEnigma, getEnigmasByGeoGroupId, deleteEnigma,
+  createEnigma, getEnigmaById, getFullEnigmaById, getAllEnigmas, updateEnigma, getEnigmasByGeoGroupId, deleteEnigma,
 };
