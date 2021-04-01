@@ -1,5 +1,5 @@
 import http from 'http';
-import express, { NextFunction, Response } from 'express';
+import express, { Response } from 'express';
 import mongoose from 'mongoose';
 import logging from './config/logging';
 import config from './config/config';
@@ -35,12 +35,8 @@ router.use(express.json());
 /** Rules of the API */
 router.use((req, res, next): Response|void => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'GET PATCH DELETE POST PUT');
-    return res.status(200).json({});
-  }
+  res.header('Access-Control-Allow-Methods', 'GET,PATCH,DELETE,POST,PUT');
+  res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, x-access-token, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
 
   return next();
 });
