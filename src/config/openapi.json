@@ -2592,6 +2592,34 @@
         "rank",
         "penalty"
         ]
+      },
+      "Proposition": 
+      {
+        "title": "Proposition",
+        "type": "object",
+        "description": "",
+        "x-examples": {},
+        "properties": 
+        {
+          "_id": 
+          {
+            "type": "string",
+            "description": ""
+          },
+          "text": 
+          {
+            "type": "string"
+          },
+          "answerId":
+          {
+            "type": "string"
+          }
+        },
+        "required": 
+        [
+        "_id",
+        "text"
+        ]
       }
     },
     "securitySchemes": {}
@@ -2623,6 +2651,9 @@
     },
     {
       "name": "/hint"
+    },
+    {
+      "name": "/proposition"
     }
   ]
 }
