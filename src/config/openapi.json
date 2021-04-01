@@ -2724,6 +2724,410 @@
         ]
       },
       "parameters": []
+    },
+    "/team/create/team": 
+    {
+      "post": 
+      {
+        "summary": "Create New Team",
+        "operationId": "create-team",
+        "responses": 
+        {
+          "201":
+          {
+            "description": "New Team Created",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "username": 
+                  {
+                    "type": "string"
+                  },
+                  "password": 
+                  {
+                    "type": "string"
+                  },
+                  "gameId": 
+                  {
+                    "type": "string"
+                  },
+                  "enigmaList": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "username",
+                  "password",
+                  "gameId"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to create a new team."
+        },
+        "description": "Create new team.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
+    },
+    "/team/update/team/{id}": 
+    {
+      "put": 
+      {
+        "summary": "Update Team by ID",
+        "operationId": "update-teambyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Team Updated by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "score": 
+                  {
+                    "type": "number"
+                  }
+                }
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update a team."
+        },
+        "description": "Update team by ID.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
+    },
+    "/team/get/teams": 
+    {
+      "get": 
+      {
+        "summary": "Get All Teams",
+        "operationId": "get-teams",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All Teams",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get all teams.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
+    },
+    "/team/get/team/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Team by ID",
+        "operationId": "get-teambyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Team by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get team by ID.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
+    },
+    "/team/get/team/game/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Team by Game ID",
+        "operationId": "get-teambygameid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Team by Games ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get team by game ID.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
+    },
+    "/team/delete/team/{id}": 
+    {
+      "delete": 
+      {
+        "summary": "Delete Team by ID",
+        "operationId": "delete-teambyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Team Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Team"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Team delete by ID.",
+        "tags": 
+        [
+          "/team"
+        ]
+      },
+      "parameters": []
     }
   },
   "components": 
@@ -3022,6 +3426,52 @@
         "_id",
         "text"
         ]
+      },
+      "Team": 
+      {
+        "title": "Team",
+        "type": "object",
+        "description": "",
+        "x-examples": {},
+        "properties": 
+        {
+          "_id": 
+          {
+            "type": "string",
+            "description": ""
+          },
+          "username": 
+          {
+            "type": "string"
+          },
+          "password":
+          {
+            "type": "string"
+          },
+          "score":
+          {
+            "type": "number"
+          },
+          "gameId":
+          {
+            "type": "string"
+          },
+          "enigmaList":
+          {
+            "type": "string"
+          },
+          "currentEnigmaId":
+          {
+            "type": "string"
+          }
+        },
+        "required": 
+        [
+        "_id",
+        "username",
+        "password",
+        "gameId"
+        ]
       }
     },
     "securitySchemes": {}
@@ -3056,6 +3506,9 @@
     },
     {
       "name": "/proposition"
+    },
+    {
+      "name": "/team"
     }
   ]
 }
