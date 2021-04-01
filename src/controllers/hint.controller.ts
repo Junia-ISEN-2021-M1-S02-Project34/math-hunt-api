@@ -18,9 +18,7 @@ const createHint = async (req: Request, res: Response): Promise<Response> => {
   });
 
   return hint.save()
-    .then((result) => res.status(201).json({
-      result,
-    }))
+    .then((result) => res.status(201).json(result))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
@@ -30,9 +28,7 @@ const createHint = async (req: Request, res: Response): Promise<Response> => {
 const getHintById = (req: Request, res: Response): void => {
   Hint.findById(req.params.id)
     .exec()
-    .then((result) => res.status(200).json({
-      result,
-    }))
+    .then((result) => res.status(200).json(result))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
@@ -55,9 +51,7 @@ const getAllHints = (req: Request, res: Response): void => {
 const getHintsByEnigmaId = (req: Request, res: Response): void => {
   Hint.find({ enigmaId: req.params.id })
     .exec()
-    .then((result) => res.status(200).json({
-      result,
-    }))
+    .then((result) => res.status(200).json(result))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,

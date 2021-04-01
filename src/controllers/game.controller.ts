@@ -13,9 +13,7 @@ const createGame = async (req: Request, res: Response): Promise<Response> => {
   });
 
   return game.save()
-    .then((result) => res.status(201).json({
-      result,
-    }))
+    .then((result) => res.status(201).json(result))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
@@ -25,9 +23,7 @@ const createGame = async (req: Request, res: Response): Promise<Response> => {
 const getGameById = (req: Request, res: Response): void => {
   Game.findById(req.params.id)
     .exec()
-    .then((result) => res.status(200).json({
-      result,
-    }))
+    .then((result) => res.status(200).json(result))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
