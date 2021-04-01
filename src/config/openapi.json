@@ -1887,6 +1887,112 @@
       },
       "parameters": []
     },
+    "/enigma/create/hint": 
+    {
+      "post": 
+      {
+        "summary": "Create New Hint",
+        "operationId": "create-hint",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "New Hint Created",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Hint"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "text": 
+                  {
+                    "type": "number"
+                  },
+                  "rank": 
+                  {
+                    "type": "number"
+                  },
+                  "penalty": 
+                  {
+                    "type": "number"
+                  },
+                  "propositionToRemove": 
+                  {
+                    "type": "string"
+                  },
+                  "enigm4": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "text",
+                  "rank",
+                  "penalty"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to create a new hint."
+        },
+        "description": "Create new hint.",
+        "tags": 
+        [
+          "/hint"
+        ]
+      },
+      "parameters": []
+    }
   },
   "components": 
   {
@@ -2068,7 +2174,7 @@
       },
       "geoGroup": 
       {
-        "title": "Game",
+        "title": "geoGroup",
         "type": "object",
         "description": "",
         "x-examples": {},
@@ -2109,6 +2215,53 @@
         "radius",
         "pictureUrl"
         ]
+      },
+      "Hint": 
+      {
+        "title": "Hint",
+        "type": "object",
+        "description": "",
+        "x-examples": {},
+        "properties": 
+        {
+          "_id": 
+          {
+            "type": "string",
+            "description": ""
+          },
+          "name": 
+          {
+            "type": "string"
+          },
+          "text":
+          {
+            "type": "string"
+          },
+          "rank":
+          {
+            "type": "number"
+          },
+          "penalty":
+          {
+            "type": "number"
+          },
+          "propositionToRemove":
+          {
+            "type": "string"
+          },
+          "enigmaId":
+          {
+            "type": "string"
+          }
+        },
+        "required": 
+        [
+        "_id",
+        "name",
+        "text",
+        "rank",
+        "penalty"
+        ]
       }
     },
     "securitySchemes": {}
@@ -2137,6 +2290,9 @@
     },
     {
       "name": "/geoGroup"
+    },
+    {
+      "name": "/hint"
     }
   ]
 }
