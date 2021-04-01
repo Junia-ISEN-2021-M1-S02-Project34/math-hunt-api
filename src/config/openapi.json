@@ -1167,7 +1167,349 @@
         ]
       },
       "parameters": []
-    }
+    },
+    "/enigma/update/game/{id]": 
+    {
+      "put": 
+      {
+        "summary": "Update Game by ID",
+        "operationId": "update-gamebyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Game Updated by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Game"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "duration": 
+                  {
+                    "type": "number"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "duration"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update a game by ID."
+        },
+        "description": "Update game by ID.",
+        "tags": 
+        [
+          "/game"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/get/games": 
+    {
+      "get": 
+      {
+        "summary": "Get All Games",
+        "operationId": "get-games",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All Games",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Game"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get all games.",
+        "tags": 
+        [
+          "/game"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/get/game/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get Game by ID",
+        "operationId": "get-gamebyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got Game by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Game"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get game by ID.",
+        "tags": 
+        [
+          "/game"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/delete/game/{id}": 
+    {
+      "delete": 
+      {
+        "summary": "Delete Game by ID",
+        "operationId": "delete-gamebyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Game Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Game"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Game delete by ID.",
+        "tags": 
+        [
+          "/game"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/start/game/{id]": 
+    {
+      "put": 
+      {
+        "summary": "Start a Game by ID",
+        "operationId": "start-gamebyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Game Started by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/Game"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "startDate": 
+                  {
+                    "type": "date"
+                  },
+                  "isStarted": 
+                  {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to start a game by ID."
+        },
+        "description": "Start a game by ID.",
+        "tags": 
+        [
+          "/game"
+        ]
+      },
+      "parameters": []
+    },
   },
   "components": 
   {
