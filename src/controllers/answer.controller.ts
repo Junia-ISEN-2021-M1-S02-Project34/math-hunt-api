@@ -49,7 +49,7 @@ const getAllAnswers = (req: Request, res: Response): void => {
 const getAnswerByEnigmaId = (req: Request, res: Response): void => {
   Answer.find({ enigmaId: req.params.id })
     .exec()
-    .then((result) => res.status(200).json(result))
+    .then((result) => res.status(200).json(result[0]))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
