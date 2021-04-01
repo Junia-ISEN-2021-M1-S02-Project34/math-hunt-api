@@ -1613,6 +1613,280 @@
       },
       "parameters": []
     },
+    "/enigma/update/geoGroup/{id}": 
+    {
+      "put": 
+      {
+        "summary": "Update geoGroup by ID",
+        "operationId": "update-geogroupbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "geoGroup Updated by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/geoGroup"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": 
+        {
+          "content": 
+          {
+            "application/json": 
+            {
+              "schema": 
+              {
+                "type": "object",
+                "properties": 
+                {
+                  "name": 
+                  {
+                    "type": "string"
+                  },
+                  "positionX": 
+                  {
+                    "type": "number"
+                  },
+                  "positionY": 
+                  {
+                    "type": "number"
+                  },
+                  "radius": 
+                  {
+                    "type": "number"
+                  },
+                  "pictureUrl": 
+                  {
+                    "type": "string"
+                  }
+                },
+                "required": 
+                [
+                  "name",
+                  "positionX",
+                  "positionY",
+                  "radius",
+                  "pictureUrl"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Put the necessary fields for the API to update a geoGroup by ID."
+        },
+        "description": "Update a geoGroup by ID.",
+        "tags": 
+        [
+          "/geoGroup"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/create/geoGroups": 
+    {
+      "get": 
+      {
+        "summary": "Get All geoGroup",
+        "operationId": "get-geogroups",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got All geoGroups",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/geoGroup"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Got all geoGroups.",
+        "tags": 
+        [
+          "/geoGroup"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/create/geoGroup/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Get geoGroup by ID",
+        "operationId": "get-geogroupbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "Got geoGroup by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/geoGroup"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Got geoGroup by ID.",
+        "tags": 
+        [
+          "/geoGroup"
+        ]
+      },
+      "parameters": []
+    },
+    "/enigma/delete/geoGroup/{id}": 
+    {
+      "get": 
+      {
+        "summary": "Delete geoGroup by ID",
+        "operationId": "delete-geogroupbyid",
+        "responses": 
+        {
+          "200":
+          {
+            "description": "geoGroup Deleted by ID",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "$ref": "#/components/schemas/geoGroup"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": 
+          {
+            "description": "Error",
+            "content": 
+            {
+              "application/json": 
+              {
+                "schema": 
+                {
+                  "type": "object",
+                  "properties": 
+                  {
+                    "error": 
+                    {
+                      "type": "string"
+                    },
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "geoGroup deleted by ID.",
+        "tags": 
+        [
+          "/geoGroup"
+        ]
+      },
+      "parameters": []
+    },
   },
   "components": 
   {
