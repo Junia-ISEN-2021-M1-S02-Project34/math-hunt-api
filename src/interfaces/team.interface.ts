@@ -7,6 +7,7 @@ export default interface ITeam extends Document {
   gameId: string;
   progression: EnigmaStatus[];
   currentEnigmaId: string;
+  isConnected: boolean;
 }
 
 interface EnigmaStatus {

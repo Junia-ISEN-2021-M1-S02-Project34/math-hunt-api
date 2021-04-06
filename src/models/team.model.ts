@@ -9,6 +9,7 @@ const TeamSchema: Schema = new Schema(
     gameId: { type: String, required: true },
     progression: [{ enigmaId: { type: Schema.Types.ObjectId, ref: 'EnigmasGroup' }, done: { type: Boolean, default: false }, score: { type: Number, default: 0 } }],
     currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
+    isConnected: { type: Boolean, default: false },
   },
   {
     timestamps: true,
