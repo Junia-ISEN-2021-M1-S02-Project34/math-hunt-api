@@ -127,7 +127,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Answer"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -742,7 +749,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Enigma"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -1273,7 +1287,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Game"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -1733,7 +1754,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/geoGroup"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -2112,7 +2140,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Hint"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -2514,7 +2549,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Proposition"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
@@ -2918,7 +2960,14 @@
               {
                 "schema": 
                 {
-                  "$ref": "#/components/schemas/Team"
+                  "type": "object",
+                  "properties": 
+                  {
+                    "": 
+                    {
+                      "type": "object"
+                    }
+                  }
                 },
                 "examples": {}
               }
