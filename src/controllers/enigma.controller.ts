@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import Enigma from '../models/enigma.model';
 import Team from '../models/team.model';
 import Answer from '../models/answer.model';
+import Hint from '../models/hint.model';
 import Proposition from '../models/proposition.model';
 
 const createEnigma = async (req: Request, res: Response): Promise<Response> => {
@@ -117,7 +118,26 @@ const updateEnigma = (req: Request, res: Response): void => {
 const deleteEnigma = (req: Request, res: Response): void => {
   Enigma.findByIdAndDelete(req.params.id)
     .exec()
-    .then(() => res.status(200).json({}))
+    .then(() => {
+      Hint.deleteMany({ enigmaId: req.params.id })
+        .exec()
+        .then(() => {
+          Answer.find({ enigmaId: req.params.id })
+            .exec()
+            .then((answer) => {
+              Answer.deleteOne({ enigmaId: req.params.id })
+                .exec()
+                .then(() => {
+                  // eslint-disable-next-line no-underscore-dangle
+                  Proposition.deleteMany({ answerId: answer._id })
+                    .exec()
+                    .then(() => {
+                      res.status(200).json({});
+                    });
+                });
+            });
+        });
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
