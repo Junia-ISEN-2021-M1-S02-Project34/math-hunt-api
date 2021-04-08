@@ -1,6 +1,7 @@
 import { Document } from 'mongoose';
 
 export default interface ITeam extends Document {
+  _id: string;
   username: string;
   password: string;
   score: number;

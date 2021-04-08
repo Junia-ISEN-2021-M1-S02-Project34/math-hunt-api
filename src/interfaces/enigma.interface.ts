@@ -1,6 +1,7 @@
 import { Document } from 'mongoose';
 
 export default interface IEnigma extends Document {
+  _id: string;
   name: string;
   description: string;
   pictureUrl: string;
