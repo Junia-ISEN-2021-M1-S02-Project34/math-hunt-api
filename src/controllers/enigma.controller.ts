@@ -129,7 +129,7 @@ const deleteEnigma = (req: Request, res: Response): void => {
                 .exec()
                 .then(() => {
                   // eslint-disable-next-line no-underscore-dangle
-                  Proposition.deleteMany({ answerId: answer._id })
+                  Proposition.deleteMany({ answerId: answer[0]._id })
                     .exec()
                     .then(() => {
                       res.status(200).json({});
