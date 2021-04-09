@@ -6,13 +6,14 @@ export default interface ITeam extends Document {
   password: string;
   score: number;
   gameId: string;
-  progression: EnigmaStatus[];
+  progression: IEnigmaStatus[];
   currentEnigmaId: string;
   isConnected: boolean;
 }
 
-interface EnigmaStatus {
+export interface IEnigmaStatus {
   enigmaId: string;
   done: boolean;
   score: number;
+  usedHintsIds: string[];
 }
