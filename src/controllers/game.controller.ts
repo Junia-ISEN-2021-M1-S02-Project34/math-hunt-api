@@ -2,8 +2,10 @@ import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import Game from '../models/game.model';
 
-const createGame = async (req: Request, res: Response): Promise<Response> => {
-  const { name, startDate, duration } = req.body;
+const createGame = async (req: Request, res: Response): Promise<void> => {
+  const {
+    name, startDate, duration,
+  } = req.body;
 
   const game = new Game({
     _id: new mongoose.Types.ObjectId(),
@@ -12,8 +14,10 @@ const createGame = async (req: Request, res: Response): Promise<Response> => {
     duration,
   });
 
-  return game.save()
-    .then((result) => res.status(201).json(result))
+  game.save()
+    .then((createdGame) => {
+      res.status(200).json(createdGame);
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
