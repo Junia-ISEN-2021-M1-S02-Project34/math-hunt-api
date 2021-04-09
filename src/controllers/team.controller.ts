@@ -183,10 +183,13 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
     // eslint-disable-next-line no-underscore-dangle
     const enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId === g._id);
     enigmasOfGeoGroup.sort((a, b) => a.order - b.order);
-    progressionToReturn.push({
-      // eslint-disable-next-line no-underscore-dangle
-      enigmaId: enigmasOfGeoGroup._id, done: false, score: 0, usedHintsIds: [],
-    });
+    // eslint-disable-next-line no-restricted-syntax
+    for (const e of enigmasOfGeoGroup) {
+      progressionToReturn.push({
+        // eslint-disable-next-line no-underscore-dangle
+        enigmaId: e._id, done: false, score: 0, usedHintsIds: [],
+      });
+    }
   }
   return progressionToReturn;
 };
