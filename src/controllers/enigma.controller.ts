@@ -8,7 +8,8 @@ import Proposition from '../models/proposition.model';
 
 const createEnigma = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, description, pictureUrl, question, positionX, positionY, scoreValue, isActive, geoGroupId,
+    name, description, pictureUrl, question, positionX,
+    positionY, scoreValue, isActive, geoGroupId, order,
   } = req.body;
 
   const enigma = new Enigma({
@@ -22,6 +23,7 @@ const createEnigma = async (req: Request, res: Response): Promise<Response> => {
     scoreValue,
     isActive,
     geoGroupId,
+    order,
   });
 
   return enigma.save()
@@ -90,7 +92,8 @@ const getEnigmasByGeoGroupId = (req: Request, res: Response): void => {
 
 const updateEnigma = (req: Request, res: Response): void => {
   const {
-    name, description, pictureUrl, question, positionX, positionY, scoreValue, isActive, geoGroupId,
+    name, description, pictureUrl, question,
+    positionX, positionY, scoreValue, isActive, geoGroupId, order,
   } = req.body;
 
   const enigma = new Enigma({
@@ -104,6 +107,7 @@ const updateEnigma = (req: Request, res: Response): void => {
     scoreValue,
     isActive,
     geoGroupId,
+    order,
   });
 
   Enigma.updateOne({ _id: req.params.id }, enigma)
@@ -145,5 +149,11 @@ const deleteEnigma = (req: Request, res: Response): void => {
 };
 
 export default {
-  createEnigma, getEnigmaById, getFullEnigmaById, getAllEnigmas, updateEnigma, getEnigmasByGeoGroupId, deleteEnigma,
+  createEnigma,
+  getEnigmaById,
+  getFullEnigmaById,
+  getAllEnigmas,
+  updateEnigma,
+  getEnigmasByGeoGroupId,
+  deleteEnigma,
 };
