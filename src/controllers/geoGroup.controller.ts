@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import GeoGroup from '../models/geoGroup.model';
+import IGeoGroup from '../interfaces/geoGroup.interface';
 
 const createGeoGroup = async (req: Request, res: Response): Promise<Response> => {
   const {
@@ -27,7 +28,17 @@ const createGeoGroup = async (req: Request, res: Response): Promise<Response> =>
 const getGeoGroupById = (req: Request, res: Response): void => {
   GeoGroup.findById(req.params.id)
     .exec()
-    .then((result) => res.status(200).json(result))
+    .then((result) => {
+      const myRes = {} as IGeoGroup;
+      // eslint-disable-next-line no-underscore-dangle
+      myRes._id = result._id;
+      myRes.name = result.name;
+      myRes.radius = result.radius;
+      myRes.pictureUrl = result.pictureUrl;
+      myRes.positionX = result.positionX;
+      myRes.positionY = result.positionY;
+      res.status(200).json(myRes);
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
