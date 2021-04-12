@@ -106,7 +106,7 @@ const updateTeamProgression = (req: Request, res: Response): void => {
       editedTeam.progression[index].score = enigmaScore;
       editedTeam.progression[index].done = true;
       editedTeam.progression[index].usedHintsIds = usedHintsIds;
-      editedTeam.currentEnigmaId = editedTeam.progression[index].enigmaId;
+      editedTeam.currentEnigmaId = editedTeam.progression[index + 1].enigmaId;
       Team.updateOne({ _id: req.params.id }, editedTeam)
         .exec()
         .then(() => res.status(200).json({}));
