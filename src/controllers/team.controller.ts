@@ -128,7 +128,13 @@ const deleteTeam = (req: Request, res: Response): void => {
 };
 
 export default {
-  createTeam, getTeamById, getAllTeams, getTeamsByGameId, updateTeam, updateTeamProgression, deleteTeam,
+  createTeam,
+  getTeamById,
+  getAllTeams,
+  getTeamsByGameId,
+  updateTeam,
+  updateTeamProgression,
+  deleteTeam,
 };
 
 function generatePassword() {
