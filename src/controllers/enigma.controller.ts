@@ -78,7 +78,7 @@ const getAllEnigmas = (req: Request, res: Response): void => {
 };
 
 const getEnigmasByGeoGroupId = (req: Request, res: Response): void => {
-  Team.find({ geoGroupId: req.params.id })
+  Enigma.find({ geoGroupId: req.params.id })
     .exec()
     .then((results) => res.status(200).json({
       enigmas: results,
