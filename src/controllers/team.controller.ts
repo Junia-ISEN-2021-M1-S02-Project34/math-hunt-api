@@ -109,9 +109,10 @@ const updateTeamProgression = (req: Request, res: Response): void => {
       editedTeam.progression[index].usedHintsIds = usedHintsIds;
       editedTeam.currentEnigmaId = editedTeam.progression[index + 1].enigmaId;
       editedTeam.currentGeoGroupId = editedTeam.progression[index + 1].geoGroupId;
-      Team.updateOne({ _id: req.params.id }, editedTeam)
+      editedTeam.score += enigmaScore;
+      Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
         .exec()
-        .then(() => res.status(200).json({}));
+        .then((result) => res.status(200).json(result));
     })
     .catch((e) => res.status(500).json({
       error: e.message,
