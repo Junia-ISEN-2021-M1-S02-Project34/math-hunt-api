@@ -24,7 +24,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
   });
 };
 
-const self = () => (req: Request, res: Response, next: NextFunction) => {
+const self = (req: Request, res: Response, next: NextFunction): void => {
   if (res.locals.role === 'admin') {
     next();
     return;
@@ -36,7 +36,7 @@ const self = () => (req: Request, res: Response, next: NextFunction) => {
   res.status(403).send({ error: 'You don\'t have rights to access this resource!' });
 };
 
-const admin = () => (req: Request, res: Response, next: NextFunction) => {
+const admin = (req: Request, res: Response, next: NextFunction): void => {
   if (res.locals.role === 'admin') {
     next();
     return;
