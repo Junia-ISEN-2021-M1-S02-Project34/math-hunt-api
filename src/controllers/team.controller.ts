@@ -28,6 +28,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
           gameId,
           progression: generatedProgression,
           currentEnigmaId: generatedProgression[0].enigmaId,
+          currentGeoGroupId: generatedProgression[0].geoGroupId,
         });
         return team.save()
           .then((result) => res.status(201).json(result))
@@ -107,6 +108,7 @@ const updateTeamProgression = (req: Request, res: Response): void => {
       editedTeam.progression[index].done = true;
       editedTeam.progression[index].usedHintsIds = usedHintsIds;
       editedTeam.currentEnigmaId = editedTeam.progression[index + 1].enigmaId;
+      editedTeam.currentGeoGroupId = editedTeam.progression[index + 1].geoGroupId;
       Team.updateOne({ _id: req.params.id }, editedTeam)
         .exec()
         .then(() => res.status(200).json({}));
@@ -193,7 +195,7 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
     for (const e of enigmasOfGeoGroup) {
       progressionToReturn.push({
         // eslint-disable-next-line no-underscore-dangle
-        enigmaId: e._id, done: false, score: 0, usedHintsIds: null,
+        enigmaId: e._id, geoGroupId: g._id, done: false, score: 0, usedHintsIds: null,
       });
     }
   }

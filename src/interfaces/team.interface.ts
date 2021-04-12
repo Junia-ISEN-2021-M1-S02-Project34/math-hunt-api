@@ -8,11 +8,13 @@ export default interface ITeam extends Document {
   gameId: string;
   progression: IEnigmaStatus[];
   currentEnigmaId: string;
+  currentGeoGroupId: string;
   isConnected: boolean;
 }
 
 export interface IEnigmaStatus {
   enigmaId: string;
+  geoGroupId: string
   done: boolean;
   score: number;
   usedHintsIds: string[];
