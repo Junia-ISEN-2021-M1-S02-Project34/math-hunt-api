@@ -25,12 +25,21 @@ const MONGO = {
   url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}`,
 };
 
+const AUTH_SECRET_KEY = process.env.SECRET_KEY || 'unique-secret-key';
+const AUTH_SALT_ROUNDS = process.env.SALT_ROUNDS || 10;
+
+const AUTH = {
+  secret: AUTH_SECRET_KEY,
+  salt_rounds: AUTH_SALT_ROUNDS,
+};
+
 const SERVER_HOSTNAME = process.env.HOSTNAME || 'localhost';
 const SERVER_PORT = process.env.PORT || 3000;
 
 const SERVER = {
   hostname: SERVER_HOSTNAME,
   port: SERVER_PORT,
+  auth: AUTH,
 };
 
 const config = {

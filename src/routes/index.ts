@@ -10,6 +10,7 @@ import AnswerRoutes from './answer.routes';
 import HintRoutes from './hint.routes';
 import PropositionRoutes from './proposition.routes';
 import AdminRoutes from './admin.routes';
+import AuthRoutes from './auth.routes';
 
 const router = express.Router();
 
@@ -23,5 +24,6 @@ router.use('/answers', AnswerRoutes);
 router.use('/hints', HintRoutes);
 router.use('/propositions', PropositionRoutes);
 router.use('/admins', AdminRoutes);
+router.use('/auth', AuthRoutes);
 
 export default router;
