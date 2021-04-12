@@ -51,7 +51,10 @@ const getAllHints = (req: Request, res: Response): void => {
 const getHintsByEnigmaId = (req: Request, res: Response): void => {
   Hint.find({ enigmaId: req.params.id })
     .exec()
-    .then((result) => res.status(200).json(result))
+    .then((result) => res.status(200).json({
+      hints: result,
+      count: result.length,
+    }))
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
