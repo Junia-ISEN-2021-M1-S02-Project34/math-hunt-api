@@ -22,7 +22,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
         const team = new Team({
           _id: new mongoose.Types.ObjectId(),
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          name: `${gameName}-team${generateRandomId()}`,
+          username: `${gameName}-team${generateRandomId()}`,
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
           password: generatePassword(),
           gameId,
@@ -187,13 +187,13 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
   // eslint-disable-next-line no-restricted-syntax
   for (const g of geoGroups) {
     // eslint-disable-next-line no-underscore-dangle
-    const enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId === g._id);
+    const enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId.toString() === g._id.toString());
     enigmasOfGeoGroup.sort((a, b) => a.order - b.order);
     // eslint-disable-next-line no-restricted-syntax
     for (const e of enigmasOfGeoGroup) {
       progressionToReturn.push({
         // eslint-disable-next-line no-underscore-dangle
-        enigmaId: e._id, done: false, score: 0, usedHintsIds: [],
+        enigmaId: e._id, done: false, score: 0, usedHintsIds: null,
       });
     }
   }
