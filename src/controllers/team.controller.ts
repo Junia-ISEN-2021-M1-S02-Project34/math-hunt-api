@@ -123,6 +123,7 @@ const updateTeamProgression = (req: Request, res: Response): void => {
             editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex + 1].enigmaId;
           }
           editedTeam.score += enigmaScore;
+          editedTeam.progression[geoGroupIndex].geoGroupScore += enigmaScore;
           Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
             .exec()
             .then((result) => res.status(200).json(result));
