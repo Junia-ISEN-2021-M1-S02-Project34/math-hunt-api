@@ -12,14 +12,14 @@ const TeamSchema: Schema = new Schema(
       geoGroupName: { type: String },
       geoGroupScore: { type: Number },
       geoGroupScoreValue: { type: Number },
-      enigmasProgression: {
+      enigmasProgression: [{
         enigmaId: { type: Schema.Types.ObjectId, ref: 'EnigmasGroup' },
         enigmaName: { type: String },
         done: { type: Boolean, default: false },
         score: { type: Number, default: 0 },
         scoreValue: { type: Number },
         usedHintsIds: [{ type: Schema.Types.ObjectId, ref: 'Hint' }],
-      },
+      }],
     }],
     currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
     currentGeoGroupId: { type: Schema.Types.ObjectId, ref: 'GeoGroup' },

@@ -210,7 +210,7 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
       geoGroupId: g._id,
       geoGroupName: g.name,
       enigmasProgression: enigmasOfProgression,
-      geoGroupScore: enigmasOfProgression.reduce((prev, cur) => prev + cur.score, 0),
+      geoGroupScore: 0,
       geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
     } as IEnigmaStatus);
   }

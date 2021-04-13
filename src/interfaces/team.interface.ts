@@ -24,5 +24,5 @@ export interface IEnigmaStatus {
     score: number;
     scoreValue: number;
     usedHintsIds: string[];
-  }]
+  }];
 }
