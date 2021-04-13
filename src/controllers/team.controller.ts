@@ -134,6 +134,29 @@ const updateTeamProgression = (req: Request, res: Response): void => {
     }));
 };
 
+const updateTeamUsedHint = (req: Request, res: Response): void => {
+  const {
+    hintId,
+  } = req.body;
+
+  Team.findById(req.params.id)
+    .exec()
+    .then((resTeam) => {
+      const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId === resTeam.currentGeoGroupId));
+      // eslint-disable-next-line no-underscore-dangle
+      const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId === resTeam.currentEnigmaId));
+      const editedTeam = resTeam;
+      editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
+      Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
+        .exec()
+        .then((result) => res.status(200).json(result));
+    })
+    .catch((e) => res.status(500).json({
+      error: e.message,
+      e,
+    }));
+};
+
 const deleteTeam = (req: Request, res: Response): void => {
   Team.findByIdAndDelete(req.params.id)
     .exec()
@@ -151,6 +174,7 @@ export default {
   getTeamsByGameId,
   updateTeam,
   updateTeamProgression,
+  updateTeamUsedHint,
   deleteTeam,
 };
 
