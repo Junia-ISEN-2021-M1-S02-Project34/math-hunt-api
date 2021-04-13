@@ -94,31 +94,45 @@ const updateTeam = (req: Request, res: Response): void => {
     }));
 };
 
-/* const updateTeamProgression = (req: Request, res: Response): void => {
+const updateTeamProgression = (req: Request, res: Response): void => {
   const {
-    finishedEnigma, enigmaScore, usedHintsIds,
+    finishedEnigma, enigmaScore,
   } = req.body;
 
   Team.findById(req.params.id)
     .exec()
     .then((resTeam) => {
-      const index = resTeam.progression.findIndex(((pe) => pe.enigmaId === finishedEnigma));
-      const editedTeam = resTeam;
-      editedTeam.progression[index].score = enigmaScore;
-      editedTeam.progression[index].done = true;
-      editedTeam.progression[index].usedHintsIds = usedHintsIds;
-      editedTeam.currentEnigmaId = editedTeam.progression[index + 1].enigmaId;
-      editedTeam.currentGeoGroupId = editedTeam.progression[index + 1].geoGroupId;
-      editedTeam.score += enigmaScore;
-      Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
+      Enigma.findById(finishedEnigma)
         .exec()
-        .then((result) => res.status(200).json(result));
+        .then((enigma) => {
+          const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId === enigma.geoGroupId));
+          // eslint-disable-next-line no-underscore-dangle
+          const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId === finishedEnigma));
+          const editedTeam = resTeam;
+          editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = enigmaScore;
+          editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].done = true;
+          // find next enigma
+          // if it's last enigma of GeoGroup
+          if (enigmaIndex + 1 > editedTeam.progression[geoGroupIndex].enigmasProgression.length - 1) {
+            // verify that's not last GeoGroup
+            if (geoGroupIndex + 1 <= editedTeam.progression.length + 1) {
+              editedTeam.currentGeoGroupId = editedTeam.progression[geoGroupIndex + 1].geoGroupId;
+              editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex + 1].enigmasProgression[0].enigmaId;
+            }
+          } else {
+            editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex + 1].enigmaId;
+          }
+          editedTeam.score += enigmaScore;
+          Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
+            .exec()
+            .then((result) => res.status(200).json(result));
+        });
     })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
     }));
-}; */
+};
 
 const deleteTeam = (req: Request, res: Response): void => {
   Team.findByIdAndDelete(req.params.id)
@@ -136,7 +150,7 @@ export default {
   getAllTeams,
   getTeamsByGameId,
   updateTeam,
-  // updateTeamProgression,
+  updateTeamProgression,
   deleteTeam,
 };
 
