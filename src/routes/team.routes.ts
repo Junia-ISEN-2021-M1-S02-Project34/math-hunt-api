@@ -8,8 +8,8 @@ router.get('/get/teams', controller.getAllTeams);
 router.get('/get/team/:id', controller.getTeamById);
 router.get('/get/teams/game/:id', controller.getTeamsByGameId);
 router.put('/update/team/:id', controller.updateTeam);
-router.post('/update/team/progression/:id', controller.updateTeamProgression);
-router.post('/update/team/used/hint/:id', controller.updateTeamUsedHint);
+router.put('/update/team/progression/:id', controller.updateTeamProgression);
+router.put('/update/team/used/hint/:id', controller.updateTeamUsedHint);
 router.delete('/delete/team/:id', controller.deleteTeam);
 
 export default router;
