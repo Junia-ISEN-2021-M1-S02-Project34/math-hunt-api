@@ -136,7 +136,7 @@ export default {
   getAllTeams,
   getTeamsByGameId,
   updateTeam,
-  updateTeamProgression,
+  // updateTeamProgression,
   deleteTeam,
 };
 
