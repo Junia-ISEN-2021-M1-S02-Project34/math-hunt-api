@@ -18,7 +18,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
       .exec()
       .then((enigmas) => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        const generatedProgression = generateRandomProgression(geoGroups, enigmas);
+        const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
         const team = new Team({
           _id: new mongoose.Types.ObjectId(),
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -27,7 +27,7 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
           password: generatePassword(),
           gameId,
           progression: generatedProgression,
-          currentEnigmaId: generatedProgression[0].enigmaId,
+          currentEnigmaId: generatedProgression[0].enigmasProgression[0].enigmaId,
           currentGeoGroupId: generatedProgression[0].geoGroupId,
         });
         return team.save()
@@ -94,7 +94,7 @@ const updateTeam = (req: Request, res: Response): void => {
     }));
 };
 
-const updateTeamProgression = (req: Request, res: Response): void => {
+/* const updateTeamProgression = (req: Request, res: Response): void => {
   const {
     finishedEnigma, enigmaScore, usedHintsIds,
   } = req.body;
@@ -118,7 +118,7 @@ const updateTeamProgression = (req: Request, res: Response): void => {
       error: e.message,
       e,
     }));
-};
+}; */
 
 const deleteTeam = (req: Request, res: Response): void => {
   Team.findByIdAndDelete(req.params.id)
@@ -192,13 +192,27 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
     // eslint-disable-next-line no-underscore-dangle
     const enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId.toString() === g._id.toString());
     enigmasOfGeoGroup.sort((a, b) => a.order - b.order);
+    const enigmasOfProgression = [];
     // eslint-disable-next-line no-restricted-syntax
     for (const e of enigmasOfGeoGroup) {
-      progressionToReturn.push({
+      enigmasOfProgression.push({
         // eslint-disable-next-line no-underscore-dangle
-        enigmaId: e._id, geoGroupId: g._id, done: false, score: 0, usedHintsIds: null,
+        enigmaId: e._id,
+        enigmaName: e.name,
+        done: false,
+        score: 0,
+        scoreValue: e.scoreValue,
+        usedHintsIds: null,
       });
     }
+    progressionToReturn.push({
+      // eslint-disable-next-line no-underscore-dangle
+      geoGroupId: g._id,
+      geoGroupName: g.name,
+      enigmasProgression: enigmasOfProgression,
+      geoGroupScore: enigmasOfProgression.reduce((prev, cur) => prev + cur.score, 0),
+      geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
+    } as IEnigmaStatus);
   }
   return progressionToReturn;
 };

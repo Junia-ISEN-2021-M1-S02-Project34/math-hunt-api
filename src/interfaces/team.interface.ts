@@ -13,9 +13,16 @@ export default interface ITeam extends Document {
 }
 
 export interface IEnigmaStatus {
-  enigmaId: string;
   geoGroupId: string;
-  done: boolean;
-  score: number;
-  usedHintsIds: string[];
+  geoGroupName: string;
+  geoGroupScore: number;
+  geoGroupScoreValue: number;
+  enigmasProgression: [{
+    enigmaId: string;
+    enigmaName: string;
+    done: boolean;
+    score: number;
+    scoreValue: number;
+    usedHintsIds: string[];
+  }]
 }
