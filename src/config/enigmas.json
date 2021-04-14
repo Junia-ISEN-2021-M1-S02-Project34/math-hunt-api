@@ -1,0 +1,914 @@
+[
+    {
+        "name": "Quartier de la Grand Place",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "https://lvdneng-rosselcdn-net.cdn.ampproject.org/i/s/lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/03/18/node_728068/46180864/public/2020/03/18/B9722965830Z.1_20200318091839_000%2BGBIFOC4VP.2-0.jpg?itok=yCS2gcJC1584520534",
+        "enigmas": [
+            {
+                "name": "Rihour",
+                "description": "Sur un arbre ayant deux branches, des oiseaux se parlent, l'un d'en haut dit à ceux d'en bas: Si un de vous nous rejoint, nous serons alors deux fois plus que vous, par contre si un de nous descend, nous serons alors à égalité.",
+                "pictureUrl": "string",
+                "question": "Combien y a-t-il d'oiseaux sur la branche du haut ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "7",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "Le nombre d'oiseaux est forcément impair sur chaque branche.",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Boulets canons",
+                "description": "string",
+                "pictureUrl": "string",
+                "question": "string",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "string",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Eglise St-Maurice",
+                "description": "Observez cette figure.",
+                "pictureUrl": "http://images.math.cnrs.fr/IMG/png/k5.png",
+                "question": "Combien y a-t-il de triangles dans cette figure ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "35",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "10"
+                        },
+                        {
+                            "text": "20"
+                        },
+                        {
+                            "text": "25"
+                        },
+                        {
+                            "text": "35"
+                        },
+                        {
+                            "text": "40"
+                        },
+                        {
+                            "text": "45"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "45"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "25"
+                    }
+                ]
+            },
+            {
+                "name": "Opéra",
+                "description": "Le directeur de l'opéra souhaite changer les instruments de l'orchestre. Il reçoit trois livraisons de 300 kg chacune. Chaque instrument est livré avec son étui ou sa malle de rangement. Le 1er chargement contient 15 violoncelles et 30 violons. Le 2e chargement contient 25 violoncelles. Le 3e contient 10 violoncelles, 20 violons et 2 harpes.",
+                "pictureUrl": "string",
+                "question": "Combien pèsent un violon, un violoncelle, une harpe ? Répondre en séparant les valeurs d'un point.",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "4.12.50",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quartier du Vieux Lille",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "https://www.zoomsurlille.fr/wp-content/uploads/2020/11/monument_2020_cathedrale_01.jpg?fbclid=IwAR0wuJZl0DFkf--NniqKtKt0r1R-O8HOJHquE1dvaOV_UNP-h8ikb5U1f1o",
+        "enigmas": [
+            {
+                "name": "Meert",
+                "description": "9 gaufres coûtent 11€ et quelques centimes. 13 gaufres coûtent 15€ et quelques centimes.",
+                "pictureUrl": "string",
+                "question": "Quel est le prix d'une gaufre ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "1,23€",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Rue de la Clef",
+                "description": "Un cadenas s'ouvre avec un code à 4 chiffres. Le premier chiffre est pair. La somme des deux premiers chiffres est 15. Le troisième est la différence entre le premier et le second. Le quatrième chiffre est la somme du second et du troisième.",
+                "pictureUrl": "string",
+                "question": "Quel est le code ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "8718",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Moulin St Pierre",
+                "description": "Vous voici devant le vestige du moulin Saint Pierre où se cache une date. Coupez cette date en deux et vous obtiendrez 2 carrés.",
+                "pictureUrl": "string",
+                "question": "Saurez-vous trouver la racine de chacun ? Pour trouver la solution, recollez les deux racines entre elles.",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "47",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "La date est notée en haut de la porte.",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Place aux oignons",
+                "description": "Il est 12h24min.",
+                "pictureUrl": "string",
+                "question": "Quelle heure sera-t-il dans 2016 minutes ? Répondre uniquement un nombre.",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "22",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "4"
+                        },
+                        {
+                            "text": "5"
+                        },
+                        {
+                            "text": "11"
+                        },
+                        {
+                            "text": "16"
+                        },
+                        {
+                            "text": "17"
+                        },
+                        {
+                            "text": "22"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "5"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "16"
+                    }
+                ]
+            },
+            {
+                "name": "Nouveau Siècle",
+                "description": "string",
+                "pictureUrl": "string",
+                "question": "string",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "string",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quartier des gares",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "http://img.over-blog.com/500x332/4/42/43/10/si-jetais/phantasia/IMGP6948.JPG",
+        "enigmas": [
+            {
+                "name": "Casino Barrière",
+                "description": "Une pile de cartes vue de côté mesure 1,3 centimètres.",
+                "pictureUrl": "string",
+                "question": "Quelle sera la hauteur de la pile si on retire tous les rois du jeu ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "1,12",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Les Tulipes de Shangri-La",
+                "description": "Un bouquet de tulipes est tel que : chaque couleur de tulipe est membre d’exactement deux bouquets, chaque bouquet comprend exactement trois fleurs, deux bouquets quelconques ont toujours exactement une couleur de tulipe en commun.",
+                "pictureUrl": "string",
+                "question": "Combien y a-t-il de couleurs et de bouquets? Accoler ces 2 valeurs et vous obtiendrez la solution.",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "64",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Façade Lille Flandres",
+                "description": "Deux villes sont réunies par un chemin de fer. Toutes les heures, il part un train de chaque ville pour rejoindre l'autre. Les trains vont tous à la même vitesse, et chaque voyage d'une ville à l'autre dure cinq heures. ",
+                "pictureUrl": "string",
+                "question": "Combien chaque train croise-t-il de trains allant en sens inverse ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "11",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "4"
+                        },
+                        {
+                            "text": "5"
+                        },
+                        {
+                            "text": "6"
+                        },
+                        {
+                            "text": "8"
+                        },
+                        {
+                            "text": "9"
+                        },
+                        {
+                            "text": "10"
+                        },
+                        {
+                            "text": "11"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "5"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "9"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quartier de l'Hôtel de Ville",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "https://fr.m.wikipedia.org/wiki/Fichier:Lille_mairie_face.jpg",
+        "enigmas": [
+            {
+                "name": "Parc Jean Baptiste Lebas",
+                "description": "Observez cette figure",
+                "pictureUrl": "string",
+                "question": "Combien y a-t-il de carrés dans cette figure ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "30",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "16"
+                        },
+                        {
+                            "text": "17"
+                        },
+                        {
+                            "text": "21"
+                        },
+                        {
+                            "text": "25"
+                        },
+                        {
+                            "text": "26"
+                        },
+                        {
+                            "text": "29"
+                        },
+                        {
+                            "text": "30"
+                        },
+                        {
+                            "text": "34"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "25"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "29"
+                    }
+                ]
+            },
+            {
+                "name": "Hermitage Gantois",
+                "description": "On a allumé ce matin à 3h une bougie neuve ayant la forme d'un cône. A 3h33, elle avait perdu un tiers de sa hauteur.",
+                "pictureUrl": "string",
+                "question": "Si on suppose que le volume brûlé est proportionnel au temps écoulé, à quelle heure la bougie aura-t-elle complètement brûlé ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "17h51",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "14h51"
+                        },
+                        {
+                            "text": "17h51"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Porte de Paris",
+                "description": "1 et 2, 3 et 5, 5 et …",
+                "pictureUrl": "string",
+                "question": "Quel est le chiffre manquant ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "4",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quartier République",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "https://p.monumentum.fr/main/59/pa00107726-statue-faidherbe.jpg",
+        "enigmas": [
+            {
+                "name": "Sébastopol",
+                "description": "string",
+                "pictureUrl": "string",
+                "question": "string",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "boolean",
+                    "solution": "string",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "first prop"
+                        },
+                        {
+                            "text": "second prop"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Musée H.N",
+                "description": "Dans le laboratoire du docteur Tripatouille, spécialiste des manipulations génétiques, il y a des Xoufolles (ayant 3 pattes, 2 becs mais pas d'oreille), des Yarbettes (ayant 7 pattes, 4 oreilles mais pas de bec), et des Zorniches (un croisement sulfureux possédant 5 pattes un bec et 2 oreilles). Parmi toutes ces bestioles le docteur compte 6000 pattes et 1662 becs.",
+                "pictureUrl": "string",
+                "question": "Combien y a-t-il d'oreilles au total parmi les bestioles du laboratoire ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "2004",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "Notons X, Y et Z le nombre de chaque espèce du laboratoire de façon à procéder à un système d'équations.",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Amphithéâtre",
+                "description": "Pour construire un escalier de 10 marches (de section carrée), il faut 110 kg de ciment. L'image représente un escalier de 4 marches.",
+                "pictureUrl": "https://www.cap-concours.fr/docs/cens/images/a_m009i01.png",
+                "question": "Combien de kg de ciment faut-il pour construire un escalier de 20 marches ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "420",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Beaux-Arts",
+                "description": "string",
+                "pictureUrl": "string",
+                "question": "string",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "boolean",
+                    "solution": "string",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "first prop"
+                        },
+                        {
+                            "text": "second prop"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quartier Vauban",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "string",
+        "enigmas": [
+            {
+                "name": "Pont Napoléon",
+                "description": "Un couple d'amoureux est sur le pont. L'homme a 20 ans de plus que sa femme. La somme de leurs âges est un multiple de 11 et la femme a au moins 30 ans.",
+                "pictureUrl": "string",
+                "question": "Quel est l'âge de celle-ci au minimum ? (Les âges sont des nombres entiers).",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "True",
+                    "solution": "34",
+                    "attemptsNumber": "3",
+                    "propositions": [
+                        {
+                            "text": "33"
+                        },
+                        {
+                            "text": "34"
+                        },
+                        {
+                            "text": "35"
+                        },
+                        {
+                            "text": "45"
+                        },
+                        {
+                            "text": "53"
+                        },
+                        {
+                            "text": "55"
+                        },
+                        {
+                            "text": "56"
+                        }
+                    ]
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "56"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "33"
+                    }
+                ]
+            },
+            {
+                "name": "Quai du Wault",
+                "description": "Vous avez 159 perles et vous savez fabriquer des colliers de 17 et 13 perles. Un collier de 17 perles se vend 20€ et celui de 13 perles se vend 15€.",
+                "pictureUrl": "string",
+                "question": "Combien vous rapportera la vente des colliers que vous allez fabriquer ? Toutes les perles devront être utilisées. Répondre par un entier.",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "185",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            },
+            {
+                "name": "Zoo",
+                "description": "Le Dr Alexander possède quelques lamas dans son zoo péruvien privé. Le nombre de lamas plus 10 chinchillas vaut 5 fois le nombre de lamas, moins 2. Si vous le souhaitez, notez le nombre de lamas L et de chinchillas C.",
+                "pictureUrl": "string",
+                "question": "Combien de lamas le Dr Alexander possède-t-il ?",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "3",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ENIGME FINALE",
+        "positionX": "number",
+        "positionY": "number",
+        "radius": "number",
+        "pictureUrl": "string",
+        "enigmas": [
+            {
+                "name": "Palais Rameau",
+                "description": "string",
+                "pictureUrl": "string",
+                "question": "string",
+                "positionX": "number",
+                "positionY": "number",
+                "scoreValue": "number",
+                "isActive": "boolean",
+                "answer": {
+                    "isMcq": "False",
+                    "solution": "string",
+                    "attemptsNumber": "3"
+                },
+                "hints": [
+                    {
+                        "name": "first hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    },
+                    {
+                        "name": "second hint",
+                        "text": "string",
+                        "rank": "number",
+                        "penalty": "number",
+                        "propositionToRemove": "string"
+                    }
+                ]
+            }
+        ]
+    }
+]
