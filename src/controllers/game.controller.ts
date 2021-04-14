@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import Game from '../models/game.model';
+import Team from '../models/team.model';
 
 const createGame = async (req: Request, res: Response): Promise<void> => {
   const {
@@ -69,7 +70,13 @@ const updateGame = (req: Request, res: Response): void => {
 const deleteGame = (req: Request, res: Response): void => {
   Game.findByIdAndDelete(req.params.id)
     .exec()
-    .then(() => res.status(200).json({}))
+    .then(() => {
+      Team.deleteMany({ gameId: req.params.id })
+        .exec()
+        .then(() => {
+          res.status(200).json({});
+        });
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
