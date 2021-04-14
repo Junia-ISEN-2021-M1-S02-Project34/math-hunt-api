@@ -3,7 +3,7 @@ import IHint from '../interfaces/hint.interface';
 
 const HintSchema: Schema = new Schema(
   {
-    name: { type: String, unique: true, required: true },
+    name: { type: String, required: true },
     text: { type: String, required: true },
     rank: { type: Number, required: true },
     penalty: { type: Number, required: true },
