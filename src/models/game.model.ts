@@ -5,7 +5,7 @@ const GameSchema: Schema = new Schema(
   {
     name: { type: String, unique: true, required: true },
     startDate: { type: Date },
-    duration: { type: Number },
+    duration: { type: Number, required: true },
     isStarted: { type: Boolean, default: false },
   },
   {

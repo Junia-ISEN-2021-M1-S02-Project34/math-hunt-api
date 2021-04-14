@@ -4,12 +4,13 @@ import Game from '../models/game.model';
 
 const createGame = async (req: Request, res: Response): Promise<void> => {
   const {
-    name,
+    name, duration,
   } = req.body;
 
   const game = new Game({
     _id: new mongoose.Types.ObjectId(),
     name,
+    duration,
   });
 
   game.save()
