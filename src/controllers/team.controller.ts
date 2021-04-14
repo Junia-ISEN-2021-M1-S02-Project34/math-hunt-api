@@ -234,15 +234,17 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
     const enigmasOfProgression = [];
     // eslint-disable-next-line no-restricted-syntax
     for (const e of enigmasOfGeoGroup) {
-      enigmasOfProgression.push({
-        // eslint-disable-next-line no-underscore-dangle
-        enigmaId: e._id,
-        enigmaName: e.name,
-        done: false,
-        score: 0,
-        scoreValue: e.scoreValue,
-        usedHintsIds: null,
-      });
+      if (e.isActive) {
+        enigmasOfProgression.push({
+          // eslint-disable-next-line no-underscore-dangle
+          enigmaId: e._id,
+          enigmaName: e.name,
+          done: false,
+          score: 0,
+          scoreValue: e.scoreValue,
+          usedHintsIds: null,
+        });
+      }
     }
     progressionToReturn.push({
       // eslint-disable-next-line no-underscore-dangle
