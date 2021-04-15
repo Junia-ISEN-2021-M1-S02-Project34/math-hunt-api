@@ -22,7 +22,6 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
           const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
           // eslint-disable-next-line no-console
-          console.log(generatedProgression);
           teams.push(new Team({
             _id: new mongoose.Types.ObjectId(),
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -36,7 +35,6 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
           }));
         }
         // eslint-disable-next-line no-console
-        console.log(teams);
         return Team.insertMany(teams)
           .then((result) => res.status(201).json(result))
           .catch((e) => res.status(500).json({
