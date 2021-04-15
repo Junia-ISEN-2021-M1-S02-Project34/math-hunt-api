@@ -118,6 +118,8 @@ const updateTeamProgression = (req: Request, res: Response): void => {
             if (geoGroupIndex + 1 <= editedTeam.progression.length + 1) {
               editedTeam.currentGeoGroupId = editedTeam.progression[geoGroupIndex + 1].geoGroupId;
               editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex + 1].enigmasProgression[0].enigmaId;
+            } else {
+              editedTeam.gameFinished = true;
             }
           } else {
             editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex + 1].enigmaId;

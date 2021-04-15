@@ -24,6 +24,7 @@ const TeamSchema: Schema = new Schema(
     currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
     currentGeoGroupId: { type: Schema.Types.ObjectId, ref: 'GeoGroup' },
     isConnected: { type: Boolean, default: false },
+    gameFinished: { type: Boolean, default: false },
   },
   {
     timestamps: true,
