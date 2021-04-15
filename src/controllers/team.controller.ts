@@ -21,6 +21,8 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
         for (let i = 0; i < numberOfTeams; i++) {
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
           const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
+          // eslint-disable-next-line no-console
+          console.log(generatedProgression);
           teams.push(new Team({
             _id: new mongoose.Types.ObjectId(),
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -33,6 +35,8 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
             currentGeoGroupId: generatedProgression[0].geoGroupId,
           }));
         }
+        // eslint-disable-next-line no-console
+        console.log(teams);
         return Team.insertMany(teams)
           .then((result) => res.status(201).json(result))
           .catch((e) => res.status(500).json({
@@ -108,9 +112,9 @@ const updateTeamProgression = (req: Request, res: Response): void => {
       Enigma.findById(finishedEnigma)
         .exec()
         .then((enigma) => {
-          const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId === enigma.geoGroupId));
+          const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId.toString() === enigma.geoGroupId.toString()));
           // eslint-disable-next-line no-underscore-dangle
-          const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId === finishedEnigma));
+          const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === finishedEnigma));
           const editedTeam = resTeam;
           editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = enigmaScore;
           editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].done = true;
