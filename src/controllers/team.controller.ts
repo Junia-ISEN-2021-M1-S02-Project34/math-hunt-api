@@ -255,14 +255,16 @@ const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): 
         });
       }
     }
-    progressionToReturn.push({
-      // eslint-disable-next-line no-underscore-dangle
-      geoGroupId: g._id,
-      geoGroupName: g.name,
-      enigmasProgression: enigmasOfProgression,
-      geoGroupScore: 0,
-      geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
-    } as IEnigmaStatus);
+    if (enigmasOfProgression.length > 0) {
+      progressionToReturn.push({
+        // eslint-disable-next-line no-underscore-dangle
+        geoGroupId: g._id,
+        geoGroupName: g.name,
+        enigmasProgression: enigmasOfProgression,
+        geoGroupScore: 0,
+        geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
+      } as IEnigmaStatus);
+    }
   }
   return progressionToReturn;
 };
