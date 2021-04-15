@@ -285,37 +285,35 @@
                     }
                 ]
             },
-            {
-                "name": "Nouveau Siècle",
-                "description": "string",
-                "pictureUrl": "string",
-                "question": "string",
-                "positionX": "number",
-                "positionY": "number",
-                "scoreValue": 20,
-                "isActive": false,
-                "answer": {
-                    "isMcq": false,
-                    "solution": "string",
-                    "attemptsNumber": 3
-                },
-                "hints": [
-                    {
-                        "name": "first hint",
-                        "text": "string",
-                        "rank": 1,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": 2,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    }
-                ]
-            }
+          {
+            "name": "Nouveau Siècle",
+            "description": "Do=19, ré=23, mi=22, fa=...",
+            "pictureUrl": "string",
+            "question": "Combien vaut fa ? Répondre par un entier.",
+            "positionX": "number",
+            "positionY": "number",
+            "scoreValue": 20,
+            "isActive": true,
+            "answer": {
+              "isMcq": false,
+              "solution": "7",
+              "attemptsNumber": 3
+            },
+            "hints": [
+              {
+                "name": "first hint",
+                "text": "sol=46",
+                "rank": 1,
+                "penalty": 3
+              },
+              {
+                "name": "second hint",
+                "text": "Connaissez-vous votre alphabet ?",
+                "rank": 2,
+                "penalty": 3
+              }
+            ]
+          }
         ]
     },
     {
@@ -592,45 +590,35 @@
         "radius": "number",
         "pictureUrl": "https://p.monumentum.fr/main/59/pa00107726-statue-faidherbe.jpg",
         "enigmas": [
-            {
-                "name": "Sébastopol",
-                "description": "string",
-                "pictureUrl": "string",
-                "question": "string",
-                "positionX": "number",
-                "positionY": "number",
-                "scoreValue": 20,
-                "isActive": false,
-                "answer": {
-                    "isMcq": "boolean",
-                    "solution": "string",
-                    "attemptsNumber": 3,
-                    "propositions": [
-                        {
-                            "text": "first prop"
-                        },
-                        {
-                            "text": "second prop"
-                        }
-                    ]
-                },
-                "hints": [
-                    {
-                        "name": "first hint",
-                        "text": "string",
-                        "rank": 1,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": 2,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    }
-                ]
+          {
+            "name": "Sébastopol",
+            "description": "Le théâtre du Sébastopol a été bâti en 102 jours après un triste incendie. Observez le bâtiment.",
+            "pictureUrl": "string",
+            "question": "Trouvez l'année de construction du théâtre, multipliez-la à ce nombre de jours puis divisez le tout par le nombre de marches de l'entrée du théâtre.",
+            "positionX": "number",
+            "positionY": "number",
+            "scoreValue": 20,
+            "isActive": false,
+            "answer": {
+              "isMcq": false,
+              "solution": "19410,6",
+              "attemptsNumber": 3
             },
+            "hints": [
+              {
+                "name": "first hint",
+                "text": "On compte 10 marches.",
+                "rank": 1,
+                "penalty": 3
+              },
+              {
+                "name": "second hint",
+                "text": "L'année de construction est dissimlée sur la façade du théâtre.",
+                "rank": 2,
+                "penalty": 3
+              }
+            ]
+          },
             {
                 "name": "Musée H.N",
                 "description": "Dans le laboratoire du docteur Tripatouille, spécialiste des manipulations génétiques, il y a des Xoufolles (ayant 3 pattes, 2 becs mais pas d'oreille), des Yarbettes (ayant 7 pattes, 4 oreilles mais pas de bec), et des Zorniches (un croisement sulfureux possédant 5 pattes, 1 bec et 2 oreilles). Parmi toutes ces bestioles le docteur compte 6000 pattes et 1662 becs.",
@@ -652,12 +640,18 @@
                         "rank": 1,
                         "penalty": 3
                     },
-                    {
-                        "name": "second hint",
-                        "text": "On ne compte pas de Zorniche dans le laboratoire du docteur Tripatouille.",
-                        "rank": 2,
-                        "penalty": 3
-                    }
+                  {
+                    "name": "second hint",
+                    "text": "Exprimez le nombre de Xoufolles en fonction du nombre de Zorniches.",
+                    "rank": 2,
+                    "penalty": 3
+                  },
+                  {
+                    "name": "third hint",
+                    "text": "On cherche le nombre d'oreilles, pas le nombre de bestioles de chaque espèce.",
+                    "rank": 3,
+                    "penalty": 3
+                  }
                 ]
             },
             {
@@ -689,45 +683,29 @@
                     }
                 ]
             },
-            {
-                "name": "Beaux-Arts",
-                "description": "string",
-                "pictureUrl": "string",
-                "question": "string",
-                "positionX": "number",
-                "positionY": "number",
-                "scoreValue": 20,
-                "isActive": false,
-                "answer": {
-                    "isMcq": "boolean",
-                    "solution": "string",
-                    "attemptsNumber": 3,
-                    "propositions": [
-                        {
-                            "text": "first prop"
-                        },
-                        {
-                            "text": "second prop"
-                        }
-                    ]
-                },
-                "hints": [
-                    {
-                        "name": "first hint",
-                        "text": "string",
-                        "rank": 1,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": 2,
-                        "penalty": 3,
-                        "propositionToRemove": "string"
-                    }
-                ]
-            }
+          {
+            "name": "Beaux-Arts",
+            "description": "Bienvenue au musée des Beaux-Arts. On y trouve une statue qui pèse une tonne plus la moitié de son poids.",
+            "pictureUrl": "string",
+            "question": "Combien de kg pèse la statue ?",
+            "positionX": "number",
+            "positionY": "number",
+            "scoreValue": 20,
+            "isActive": false,
+            "answer": {
+              "isMcq": false,
+              "solution": "2000",
+              "attemptsNumber": 3
+            },
+            "hints": [
+              {
+                "name": "first hint",
+                "text": "Représentez le problème par une équation.",
+                "rank": 1,
+                "penalty": 3
+              }
+            ]
+          }
         ]
     },
     {
