@@ -120,7 +120,7 @@ const updateTeamProgression = (req: Request, res: Response): void => {
           // if it's last enigma of GeoGroup
           if (enigmaIndex + 1 > editedTeam.progression[geoGroupIndex].enigmasProgression.length - 1) {
             // verify that's not last GeoGroup
-            if (geoGroupIndex + 1 > editedTeam.progression.length + 1) {
+            if (geoGroupIndex + 1 > editedTeam.progression.length - 1) {
               editedTeam.gameFinished = true;
             } else {
               editedTeam.currentGeoGroupId = editedTeam.progression[geoGroupIndex + 1].geoGroupId;
