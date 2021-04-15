@@ -6,7 +6,7 @@ const TeamSchema: Schema = new Schema(
     username: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     score: { type: Number, default: 0 },
-    gameId: { type: String, required: true },
+    gameId: { type: Schema.Types.ObjectId, ref: 'Game' },
     progression: [{
       geoGroupId: { type: Schema.Types.ObjectId, ref: 'GeoGroup' },
       geoGroupName: { type: String },
