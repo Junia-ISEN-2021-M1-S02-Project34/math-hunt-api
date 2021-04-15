@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 import Team from '../models/team.model';
 import Enigma from '../models/enigma.model';
 import GeoGroup from '../models/geoGroup.model';
-import { IEnigmaStatus } from '../interfaces/team.interface';
+import ITeam, { IEnigmaStatus } from '../interfaces/team.interface';
 import IEnigma from '../interfaces/enigma.interface';
 import IGeoGroup from '../interfaces/geoGroup.interface';
 
-const createTeam = async (req: Request, res: Response): Promise<Response> => {
+const createTeams = async (req: Request, res: Response): Promise<Response> => {
   const {
-    gameId, gameName,
+    gameId, gameName, numberOfTeams,
   } = req.body;
 
   return GeoGroup.find()
@@ -17,20 +17,26 @@ const createTeam = async (req: Request, res: Response): Promise<Response> => {
     .then((geoGroups) => Enigma.find()
       .exec()
       .then((enigmas) => {
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
-        const team = new Team({
-          _id: new mongoose.Types.ObjectId(),
+        const teams = [] as ITeam[];
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < numberOfTeams; i++) {
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          username: `${gameName}-team${generateRandomId()}`,
-          // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          password: generatePassword(),
-          gameId,
-          progression: generatedProgression,
-          currentEnigmaId: generatedProgression[0].enigmasProgression[0].enigmaId,
-          currentGeoGroupId: generatedProgression[0].geoGroupId,
-        });
-        return team.save()
+          const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
+          teams.push({
+            _id: new mongoose.Types.ObjectId(),
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            username: `${gameName}-team${generateRandomId()}`,
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            password: generatePassword(),
+            gameId,
+            progression: generatedProgression,
+            currentEnigmaId: generatedProgression[0].enigmasProgression[0].enigmaId,
+            currentGeoGroupId: generatedProgression[0].geoGroupId,
+          });
+        }
+        // eslint-disable-next-line no-console
+        console.log(teams);
+        return Team.insertMany(teams)
           .then((result) => res.status(201).json(result))
           .catch((e) => res.status(500).json({
             error: e.message,
@@ -169,7 +175,7 @@ const deleteTeam = (req: Request, res: Response): void => {
 };
 
 export default {
-  createTeam,
+  createTeams,
   getTeamById,
   getAllTeams,
   getTeamsByGameId,

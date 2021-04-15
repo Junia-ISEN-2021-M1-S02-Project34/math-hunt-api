@@ -3,7 +3,7 @@ import controller from '../controllers/team.controller';
 
 const router = express.Router();
 
-router.post('/create/team', controller.createTeam);
+router.post('/create/team', controller.createTeams);
 router.get('/get/teams', controller.getAllTeams);
 router.get('/get/team/:id', controller.getTeamById);
 router.get('/get/teams/game/:id', controller.getTeamsByGameId);
