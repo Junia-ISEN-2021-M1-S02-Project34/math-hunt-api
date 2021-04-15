@@ -13,7 +13,7 @@
                 "question": "Combien y a-t-il d'oiseaux sur la branche du haut ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -24,50 +24,46 @@
                     {
                         "name": "first hint",
                         "text": "Le nombre d'oiseaux est forcément impair sur chaque branche.",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Il faut chercher un chiffre.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
-            {
-                "name": "Boulets canons",
-                "description": "string",
-                "pictureUrl": "string",
-                "question": "string",
-                "positionX": "number",
-                "positionY": "number",
-                "scoreValue": "number",
-                "isActive": "boolean",
-                "answer": {
-                    "isMcq": "False",
-                    "solution": "string",
-                    "attemptsNumber": "3"
-                },
-                "hints": [
-                    {
-                        "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    }
-                ]
+          {
+            "name": "Boulets canons",
+            "description": "Levez la tête, et observez la façade de l'enseigne Morel & Fils, ne voyez-vous rien de particulier ?",
+            "pictureUrl": "string",
+            "question": "Comptez le nombre de boulets présents sur la façade et multipliez le par l'année de fondation de l'enseigne. Attention un des boulets est un peu particulier en référence à celle-ci.",
+            "positionX": "number",
+            "positionY": "number",
+            "scoreValue": "20",
+            "isActive": "boolean",
+            "answer": {
+              "isMcq": "False",
+              "solution": "9065",
+              "attemptsNumber": "3"
             },
+            "hints": [
+              {
+                "name": "first hint",
+                "text": "Le nombre de boulets se compte sur les doigts d'une main.",
+                "rank": "1",
+                "penalty": "3"
+              },
+              {
+                "name": "second hint",
+                "text": "L'année de fondation est 1813.",
+                "rank": "2",
+                "penalty": "3"
+              }
+            ]
+          },
             {
                 "name": "Eglise St-Maurice",
                 "description": "Observez cette figure.",
@@ -75,7 +71,7 @@
                 "question": "Combien y a-t-il de triangles dans cette figure ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
@@ -105,16 +101,16 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "45"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "25"
                     }
                 ]
@@ -126,7 +122,7 @@
                 "question": "Combien pèsent un violon, un violoncelle, une harpe ? Répondre en séparant les valeurs d'un point.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -136,17 +132,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Pour résoudre le problème, représentez la situation par un système d'équations.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Un violoncelle pèse 12 kg.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             }
@@ -166,7 +160,7 @@
                 "question": "Quel est le prix d'une gaufre ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -176,17 +170,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "On peut procéder par encadrement.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Une gaufre coûte entre 1,00€ et 1,50€.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -197,7 +189,7 @@
                 "question": "Quel est le code ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -207,28 +199,26 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "La somme des 4 chiffres vaut 24.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Le quatrième chiffre est pair.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
             {
                 "name": "Moulin St Pierre",
-                "description": "Vous voici devant le vestige du moulin Saint Pierre où se cache une date. Coupez cette date en deux et vous obtiendrez 2 carrés.",
+                "description": "Vous voici devant le vestige du moulin Saint Pierre où se cache une date. Trouvez cette date et coupez-la en deux et vous obtiendrez 2 carrés.",
                 "pictureUrl": "string",
                 "question": "Saurez-vous trouver la racine de chacun ? Pour trouver la solution, recollez les deux racines entre elles.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -239,16 +229,8 @@
                     {
                         "name": "first hint",
                         "text": "La date est notée en haut de la porte.",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "rank": "1",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -259,7 +241,7 @@
                 "question": "Quelle heure sera-t-il dans 2016 minutes ? Répondre uniquement un nombre.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
@@ -289,16 +271,16 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "5"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "16"
                     }
                 ]
@@ -310,7 +292,7 @@
                 "question": "string",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -321,15 +303,15 @@
                     {
                         "name": "first hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     },
                     {
                         "name": "second hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     }
                 ]
@@ -345,32 +327,30 @@
         "enigmas": [
             {
                 "name": "Casino Barrière",
-                "description": "Une pile de cartes vue de côté mesure 1,3 centimètres.",
+                "description": "Une pile de cartes (sans joker) vue de côté mesure 1,3 centimètres.",
                 "pictureUrl": "string",
                 "question": "Quelle sera la hauteur de la pile si on retire tous les rois du jeu ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
-                    "solution": "1,12",
+                    "solution": "1,2",
                     "attemptsNumber": "3"
                 },
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Combien y a-t-il de cartes dans la pile ?",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Il y a quatre rois à retirer.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -381,7 +361,7 @@
                 "question": "Combien y a-t-il de couleurs et de bouquets? Accoler ces 2 valeurs et vous obtiendrez la solution.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -391,17 +371,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Schématiser la situation pourrait vous aider.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "La réponse attendue est un carré.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -412,7 +390,7 @@
                 "question": "Combien chaque train croise-t-il de trains allant en sens inverse ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
@@ -445,16 +423,16 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "5"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "9"
                     }
                 ]
@@ -475,7 +453,7 @@
                 "question": "Combien y a-t-il de carrés dans cette figure ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
@@ -511,16 +489,16 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "25"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "29"
                     }
                 ]
@@ -532,35 +510,47 @@
                 "question": "Si on suppose que le volume brûlé est proportionnel au temps écoulé, à quelle heure la bougie aura-t-elle complètement brûlé ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
                     "solution": "17h51",
                     "attemptsNumber": "3",
-                    "propositions": [
-                        {
-                            "text": "14h51"
-                        },
-                        {
-                            "text": "17h51"
-                        }
-                    ]
+                  "propositions": [
+                    {
+                      "text": "4h39"
+                    },
+                    {
+                      "text": "7h09"
+                    },
+                    {
+                      "text": "10h09"
+                    },
+                    {
+                      "text": "14h51"
+                    },
+                    {
+                      "text": "17h51"
+                    },
+                    {
+                      "text": "20h51"
+                    }
+                  ]
                 },
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
+                        "propositionToRemove": "20h51"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
+                        "propositionToRemove": "10h09"
                     }
                 ]
             },
@@ -571,7 +561,7 @@
                 "question": "Quel est le chiffre manquant ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -581,17 +571,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Ne partez pas dans des calculs compliqués.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Ecrivez l'énigme en toutes lettres.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             }
@@ -611,7 +599,7 @@
                 "question": "string",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "boolean",
@@ -630,27 +618,27 @@
                     {
                         "name": "first hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     },
                     {
                         "name": "second hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     }
                 ]
             },
             {
                 "name": "Musée H.N",
-                "description": "Dans le laboratoire du docteur Tripatouille, spécialiste des manipulations génétiques, il y a des Xoufolles (ayant 3 pattes, 2 becs mais pas d'oreille), des Yarbettes (ayant 7 pattes, 4 oreilles mais pas de bec), et des Zorniches (un croisement sulfureux possédant 5 pattes un bec et 2 oreilles). Parmi toutes ces bestioles le docteur compte 6000 pattes et 1662 becs.",
+                "description": "Dans le laboratoire du docteur Tripatouille, spécialiste des manipulations génétiques, il y a des Xoufolles (ayant 3 pattes, 2 becs mais pas d'oreille), des Yarbettes (ayant 7 pattes, 4 oreilles mais pas de bec), et des Zorniches (un croisement sulfureux possédant 5 pattes, 1 bec et 2 oreilles). Parmi toutes ces bestioles le docteur compte 6000 pattes et 1662 becs.",
                 "pictureUrl": "string",
                 "question": "Combien y a-t-il d'oreilles au total parmi les bestioles du laboratoire ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -661,16 +649,14 @@
                     {
                         "name": "first hint",
                         "text": "Notons X, Y et Z le nombre de chaque espèce du laboratoire de façon à procéder à un système d'équations.",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "On ne compte pas de Zorniche dans le laboratoire du docteur Tripatouille.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -678,10 +664,10 @@
                 "name": "Amphithéâtre",
                 "description": "Pour construire un escalier de 10 marches (de section carrée), il faut 110 kg de ciment. L'image représente un escalier de 4 marches.",
                 "pictureUrl": "https://www.cap-concours.fr/docs/cens/images/a_m009i01.png",
-                "question": "Combien de kg de ciment faut-il pour construire un escalier de 20 marches ?",
+                "question": "Combien de kg de ciment faut-il pour construire un escalier de 20 marches ? Répondre par un entier.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -691,17 +677,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Combien de kg de ciment avons nous besoin pour une section carré ?",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Comptez combien de kg de ciment nécessite chaque marche puis additionnez tout.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -712,7 +696,7 @@
                 "question": "string",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "boolean",
@@ -731,15 +715,15 @@
                     {
                         "name": "first hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     },
                     {
                         "name": "second hint",
                         "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "string"
                     }
                 ]
@@ -760,7 +744,7 @@
                 "question": "Quel est l'âge de celle-ci au minimum ? (Les âges sont des nombres entiers).",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "True",
@@ -793,16 +777,16 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "1",
+                        "penalty": "3",
                         "propositionToRemove": "56"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
+                        "text": "",
+                        "rank": "2",
+                        "penalty": "3",
                         "propositionToRemove": "33"
                     }
                 ]
@@ -814,7 +798,7 @@
                 "question": "Combien vous rapportera la vente des colliers que vous allez fabriquer ? Toutes les perles devront être utilisées. Répondre par un entier.",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -824,17 +808,15 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Cherchez toutes les combinaisons linéaires possibles de 13 et 17 qui donnent 159.",
+                        "rank": "1",
+                        "penalty": "3"
                     },
                     {
                         "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Il n'y a qu'une seule manière d'utiliser toutes les perles.",
+                        "rank": "2",
+                        "penalty": "3"
                     }
                 ]
             },
@@ -845,7 +827,7 @@
                 "question": "Combien de lamas le Dr Alexander possède-t-il ?",
                 "positionX": "number",
                 "positionY": "number",
-                "scoreValue": "number",
+                "scoreValue": "20",
                 "isActive": "boolean",
                 "answer": {
                     "isMcq": "False",
@@ -855,17 +837,9 @@
                 "hints": [
                     {
                         "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
+                        "text": "Il n'y a pas beaucoup de lamas dans le zoo.",
+                        "rank": "1",
+                        "penalty": "3"
                     }
                 ]
             }
