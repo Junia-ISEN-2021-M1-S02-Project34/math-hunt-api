@@ -154,7 +154,14 @@ const updateTeamUsedHint = (req: Request, res: Response): void => {
       // eslint-disable-next-line no-underscore-dangle
       const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === resTeam.currentEnigmaId.toString()));
       const editedTeam = resTeam;
-      editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
+      if (editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds) {
+        if (!editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.includes(hintId)) {
+          editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
+        }
+      } else {
+        editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds = [];
+        editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
+      }
       Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
         .exec()
         .then((result) => res.status(200).json(result));
