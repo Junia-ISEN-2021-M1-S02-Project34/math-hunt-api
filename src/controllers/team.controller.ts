@@ -150,9 +150,9 @@ const updateTeamUsedHint = (req: Request, res: Response): void => {
   Team.findById(req.params.id)
     .exec()
     .then((resTeam) => {
-      const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId === resTeam.currentGeoGroupId));
+      const geoGroupIndex = resTeam.progression.findIndex(((pe) => pe.geoGroupId.toString() === resTeam.currentGeoGroupId.toString()));
       // eslint-disable-next-line no-underscore-dangle
-      const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId === resTeam.currentEnigmaId));
+      const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === resTeam.currentEnigmaId.toString()));
       const editedTeam = resTeam;
       editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
       Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
