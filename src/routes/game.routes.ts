@@ -6,6 +6,7 @@ const router = express.Router();
 router.post('/create/game', controller.createGame);
 router.get('/get/games', controller.getAllGames);
 router.get('/get/game/:id', controller.getGameById);
+router.get('/get/teams/ranking/game/:id', controller.getRanking);
 router.put('/update/game/:id', controller.updateGame);
 router.delete('/delete/game/:id', controller.deleteGame);
 

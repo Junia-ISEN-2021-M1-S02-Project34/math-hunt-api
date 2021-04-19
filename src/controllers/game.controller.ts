@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import Game from '../models/game.model';
 import Team from '../models/team.model';
+import ITeam from '../interfaces/team.interface';
 
 const createGame = async (req: Request, res: Response): Promise<void> => {
   const {
@@ -99,6 +100,26 @@ const startGame = (req: Request, res: Response): void => {
     }));
 };
 
+const getRanking = (req: Request, res: Response): void => {
+  Team.find({ gameId: req.params.id })
+    .exec()
+    .then((results) => {
+      results.sort((a: ITeam, b: ITeam) => {
+        if (a.score < b.score) { return -1; }
+        if (a.score > b.score) { return 1; }
+        return 0;
+      });
+      res.status(200).json({
+        teams: results,
+        count: results.length,
+      });
+    })
+    .catch((e) => res.status(500).json({
+      error: e.message,
+      e,
+    }));
+};
+
 export default {
-  createGame, getGameById, getAllGames, updateGame, deleteGame, startGame,
+  createGame, getGameById, getAllGames, updateGame, deleteGame, startGame, getRanking,
 };
