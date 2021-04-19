@@ -19,6 +19,7 @@ const TeamSchema: Schema = new Schema(
         score: { type: Number, default: 0 },
         scoreValue: { type: Number },
         usedHintsIds: [{ type: Schema.Types.ObjectId, ref: 'Hint' }],
+        attemptsNumber: { type: Number, default: 0 },
       }],
     }],
     currentEnigmaId: { type: Schema.Types.ObjectId, ref: 'Enigma' },
