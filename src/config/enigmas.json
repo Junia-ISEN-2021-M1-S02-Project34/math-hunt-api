@@ -4,12 +4,15 @@
     "positionX": 50.636507,
     "positionY": 3.064057,
     "radius": 30,
+<<<<<<< HEAD
     "pictureUrl": "https://lvdneng-rosselcdn-net.cdn.ampproject.org/i/s/lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/03/18/node_728068/46180864/public/2020/03/18/B9722965830Z.1_20200318091839_000%2BGBIFOC4VP.2-0.jpg?itok=yCS2gcJC1584520534",
+=======
+    "pictureUrl",: "https://lvdneng-rosselcdn-net.cdn.ampproject.org/i/s/lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/03/18/node_728068/46180864/public/2020/03/18/B9722965830Z.1_20200318091839_000%2BGBIFOC4VP.2-0.jpg?itok=yCS2gcJC1584520534",
+>>>>>>> dev
     "enigmas": [
       {
         "name": "Rihour",
         "description": "Sur un arbre ayant deux branches, des oiseaux se parlent, l'un d'en haut dit à ceux d'en bas: Si un de vous nous rejoint, nous serons alors deux fois plus que vous, par contre si un de nous descend, nous serons alors à égalité.",
-        "pictureUrl": "string",
         "question": "Combien y a-t-il d'oiseaux sur la branche du haut ?",
         "positionX": 50.635597,
         "positionY": 3.062617,
@@ -38,7 +41,6 @@
       {
         "name": "Boulets canons",
         "description": "Levez la tête, et observez la façade de l'enseigne Morel & Fils, ne voyez-vous rien de particulier ?",
-        "pictureUrl": "string",
         "question": "Comptez le nombre de boulets présents sur la façade et multipliez le par l'année de fondation de l'enseigne. Attention un des boulets est un peu particulier en référence à celle-ci.",
         "positionX": 50.637684,
         "positionY": 3.06402,
@@ -118,7 +120,6 @@
       {
         "name": "Opéra",
         "description": "Le directeur de l'opéra souhaite changer les instruments de l'orchestre. Il reçoit trois livraisons de 300 kg chacune. Chaque instrument est livré avec son étui ou sa malle de rangement. Le 1er chargement contient 15 violoncelles et 30 violons. Le 2e chargement contient 25 violoncelles. Le 3e contient 10 violoncelles, 20 violons et 2 harpes.",
-        "pictureUrl": "string",
         "question": "Combien pèsent un violon, un violoncelle, une harpe ? Répondre en séparant les valeurs d'un point.",
         "positionX": 50.637257,
         "positionY": 3.064784,
@@ -156,7 +157,6 @@
       {
         "name": "Meert",
         "description": "9 gaufres coûtent 11€ et quelques centimes. 13 gaufres coûtent 15€ et quelques centimes.",
-        "pictureUrl": "string",
         "question": "Quel est le prix d'une gaufre ?",
         "positionX": 50.637784,
         "positionY": 3.061941,
@@ -185,7 +185,6 @@
       {
         "name": "Rue de la Clef",
         "description": "Un cadenas s'ouvre avec un code à 4 chiffres. Le premier chiffre est pair. La somme des deux premiers chiffres est 15. Le troisième est la différence entre le premier et le second. Le quatrième chiffre est la somme du second et du troisième.",
-        "pictureUrl": "string",
         "question": "Quel est le code ?",
         "positionX": 50.639466,
         "positionY": 3.064849,
@@ -214,7 +213,6 @@
       {
         "name": "Moulin St Pierre",
         "description": "Vous voici devant le vestige du moulin Saint Pierre où se cache une date. Trouvez cette date et coupez-la en deux et vous obtiendrez 2 carrés.",
-        "pictureUrl": "string",
         "question": "Saurez-vous trouver la racine de chacun ? Pour trouver la solution, recollez les deux racines entre elles.",
         "positionX": 50.640791,
         "positionY": 3.06355,
@@ -237,7 +235,6 @@
       {
         "name": "Place aux oignons",
         "description": "Il est 12h24min.",
-        "pictureUrl": "string",
         "question": "Quelle heure sera-t-il dans 2016 minutes ? Répondre uniquement un nombre.",
         "positionX": 50.640876,
         "positionY": 3.061535,
@@ -288,7 +285,6 @@
       {
         "name": "Nouveau Siècle",
         "description": "Do=19, ré=23, mi=22, fa=...",
-        "pictureUrl": "string",
         "question": "Combien vaut fa ? Répondre par un entier.",
         "positionX": 50.636911,
         "positionY": 3.060253,
@@ -326,7 +322,6 @@
       {
         "name": "Casino Barrière",
         "description": "Une pile de cartes (sans joker) vue de côté mesure 1,3 centimètres.",
-        "pictureUrl": "string",
         "question": "Quelle sera la hauteur de la pile si on retire tous les rois du jeu ?",
         "positionX": 50.636269,
         "positionY": 3.076920,
@@ -355,7 +350,6 @@
       {
         "name": "Les Tulipes de Shangri-La",
         "description": "Un bouquet de tulipes est tel que : chaque couleur de tulipe est membre d’exactement deux bouquets, chaque bouquet comprend exactement trois fleurs, deux bouquets quelconques ont toujours exactement une couleur de tulipe en commun.",
-        "pictureUrl": "string",
         "question": "Combien y a-t-il de couleurs et de bouquets? Accoler ces 2 valeurs et vous obtiendrez la solution.",
         "positionX": 50.638737,
         "positionY": 3.074745,
@@ -384,7 +378,6 @@
       {
         "name": "Façade Lille Flandres",
         "description": "Deux villes sont réunies par un chemin de fer. Toutes les heures, il part un train de chaque ville pour rejoindre l'autre. Les trains vont tous à la même vitesse, et chaque voyage d'une ville à l'autre dure cinq heures. ",
-        "pictureUrl": "string",
         "question": "Combien chaque train croise-t-il de trains allant en sens inverse ?",
         "positionX": 50.636592,
         "positionY": 3.069542,
@@ -447,7 +440,6 @@
       {
         "name": "Parc Jean Baptiste Lebas",
         "description": "Observez cette figure.",
-        "pictureUrl": "string",
         "question": "Combien y a-t-il de carrés dans cette figure ?",
         "positionX": 50.626550,
         "positionY": 3.069019,
@@ -503,8 +495,7 @@
       },
       {
         "name": "Hermitage Gantois",
-        "description": "On a allumé ce matin à 3h une bougie neuve ayant la forme d'un cône. A 3h33, elle avait perdu un tiers de sa hauteur.",
-        "pictureUrl": "string",
+        "description": "On a allumé ce matin à 3h une bougie neuve ayant la forme d'un cône. A 3h33, elle avait perdu un tiers de sa hauteur."
         "question": "Si on suppose que le volume brûlé est proportionnel au temps écoulé, à quelle heure la bougie aura-t-elle complètement brûlé ?",
         "positionX": 50.631457,
         "positionY": 3.06838,
@@ -555,7 +546,6 @@
       {
         "name": "Porte de Paris",
         "description": "1 et 2, 3 et 5, 5 et …",
-        "pictureUrl": "string",
         "question": "Quel est le chiffre manquant ?",
         "positionX": 50.629665,
         "positionY": 3.068826,
@@ -593,7 +583,6 @@
       {
         "name": "Sébastopol",
         "description": "Le théâtre du Sébastopol a été bâti en 102 jours après un triste incendie. Observez le bâtiment.",
-        "pictureUrl": "string",
         "question": "Trouvez l'année de construction du théâtre, multipliez-la à ce nombre de jours puis divisez le tout par le nombre de marches de l'entrée du théâtre.",
         "positionX": 50.629315,
         "positionY": 3.058243,
@@ -622,7 +611,6 @@
       {
         "name": "Musée H.N",
         "description": "Dans le laboratoire du docteur Tripatouille, spécialiste des manipulations génétiques, il y a des Xoufolles (ayant 3 pattes, 2 becs mais pas d'oreille), des Yarbettes (ayant 7 pattes, 4 oreilles mais pas de bec), et des Zorniches (un croisement sulfureux possédant 5 pattes, 1 bec et 2 oreilles). Parmi toutes ces bestioles le docteur compte 6000 pattes et 1662 becs.",
-        "pictureUrl": "string",
         "question": "Combien y a-t-il d'oreilles au total parmi les bestioles du laboratoire ?",
         "positionX": 50.626223,
         "positionY": 3.066521,
@@ -686,7 +674,6 @@
       {
         "name": "Beaux-Arts",
         "description": "Bienvenue au musée des Beaux-Arts. On y trouve une statue qui pèse une tonne plus la moitié de son poids.",
-        "pictureUrl": "string",
         "question": "Combien de kg pèse la statue ?",
         "positionX": 50.630788,
         "positionY": 3.062293,
@@ -713,12 +700,10 @@
     "positionX": 50.636187,
     "positionY": 3.050398,
     "radius": 30,
-    "pictureUrl": "string",
     "enigmas": [
       {
         "name": "Pont Napoléon",
         "description": "Un couple d'amoureux est sur le pont. L'homme a 20 ans de plus que sa femme. La somme de leurs âges est un multiple de 11 et la femme a au moins 30 ans.",
-        "pictureUrl": "string",
         "question": "Quel est l'âge de celle-ci au minimum ? (Les âges sont des nombres entiers).",
         "positionX": 50.642800,
         "positionY": 3.052201,
@@ -772,7 +757,6 @@
       {
         "name": "Quai du Wault",
         "description": "Vous avez 159 perles et vous savez fabriquer des colliers de 17 et 13 perles. Un collier de 17 perles se vend 20€ et celui de 13 perles se vend 15€.",
-        "pictureUrl": "string",
         "question": "Combien vous rapportera la vente des colliers que vous allez fabriquer ? Toutes les perles devront être utilisées. Répondre par un entier.",
         "positionX": 50.637463,
         "positionY": 3.053843,
@@ -801,7 +785,6 @@
       {
         "name": "Zoo",
         "description": "Le Dr Alexander possède quelques lamas dans son zoo péruvien privé. Le nombre de lamas plus 10 chinchillas vaut 5 fois le nombre de lamas, moins 2. Si vous le souhaitez, notez le nombre de lamas L et de chinchillas C.",
-        "pictureUrl": "string",
         "question": "Combien de lamas le Dr Alexander possède-t-il ?",
         "positionX": 50.637426,
         "positionY": 3.046553,
@@ -823,44 +806,44 @@
       }
     ]
   },
-    {
-        "name": "ENIGME FINALE",
+  {
+    "name": "ENIGME FINALE",
+    "positionX": "number",
+    "positionY": "number",
+    "radius": 30,
+    "pictureUrl": "string",
+    "enigmas": [
+      {
+        "name": "Palais Rameau",
+        "description": "string",
+        "pictureUrl": "string",
+        "question": "string",
         "positionX": "number",
         "positionY": "number",
-        "radius": 20,
-        "pictureUrl": "string",
-        "enigmas": [
-            {
-                "name": "Palais Rameau",
-                "description": "string",
-                "pictureUrl": "string",
-                "question": "string",
-                "positionX": "number",
-                "positionY": "number",
-                "scoreValue": "number",
-                "isActive": false,
-                "answer": {
-                    "isMcq": "False",
-                    "solution": "string",
-                    "attemptsNumber": "3"
-                },
-                "hints": [
-                    {
-                        "name": "first hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    },
-                    {
-                        "name": "second hint",
-                        "text": "string",
-                        "rank": "number",
-                        "penalty": "number",
-                        "propositionToRemove": "string"
-                    }
-                ]
-            }
+        "scoreValue": "number",
+        "isActive": false,
+        "answer": {
+          "isMcq": "False",
+          "solution": "string",
+          "attemptsNumber": "3"
+        },
+        "hints": [
+          {
+            "name": "first hint",
+            "text": "string",
+            "rank": "number",
+            "penalty": "number",
+            "propositionToRemove": "string"
+          },
+          {
+            "name": "second hint",
+            "text": "string",
+            "rank": "number",
+            "penalty": "number",
+            "propositionToRemove": "string"
+          }
         ]
-    }
+      }
+    ]
+  }
 ]
