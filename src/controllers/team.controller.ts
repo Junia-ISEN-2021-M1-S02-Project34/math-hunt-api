@@ -6,6 +6,7 @@ import GeoGroup from '../models/geoGroup.model';
 import { IEnigmaStatus } from '../interfaces/team.interface';
 import IEnigma from '../interfaces/enigma.interface';
 import IGeoGroup from '../interfaces/geoGroup.interface';
+import Hint from '../models/hint.model';
 
 const createTeams = async (req: Request, res: Response): Promise<Response> => {
   const {
@@ -101,7 +102,7 @@ const updateTeam = (req: Request, res: Response): void => {
 
 const updateTeamProgression = (req: Request, res: Response): void => {
   const {
-    finishedEnigma, enigmaScore,
+    finishedEnigma, isSuccess,
   } = req.body;
 
   Team.findById(req.params.id)
@@ -114,7 +115,11 @@ const updateTeamProgression = (req: Request, res: Response): void => {
           // eslint-disable-next-line no-underscore-dangle
           const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === finishedEnigma));
           const editedTeam = resTeam;
-          editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = enigmaScore;
+          if (isSuccess) {
+            editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score += editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].scoreValue;
+          } else {
+            editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = 0;
+          }
           editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].done = true;
           // find next enigma
           // if it's last enigma of GeoGroup
@@ -129,8 +134,8 @@ const updateTeamProgression = (req: Request, res: Response): void => {
           } else {
             editedTeam.currentEnigmaId = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex + 1].enigmaId;
           }
-          editedTeam.score += enigmaScore;
-          editedTeam.progression[geoGroupIndex].geoGroupScore += enigmaScore;
+          editedTeam.score += editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score;
+          editedTeam.progression[geoGroupIndex].geoGroupScore += editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score;
           Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
             .exec()
             .then((result) => res.status(200).json(result));
@@ -162,9 +167,14 @@ const updateTeamUsedHint = (req: Request, res: Response): void => {
         editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds = [];
         editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].usedHintsIds.push(hintId);
       }
-      Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
+      Hint.findById(hintId)
         .exec()
-        .then((result) => res.status(200).json(result));
+        .then((hint) => {
+          editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score -= hint.penalty;
+          Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
+            .exec()
+            .then((result) => res.status(200).json(result));
+        });
     })
     .catch((e) => res.status(500).json({
       error: e.message,
@@ -181,6 +191,7 @@ const updateAttemptsNumber = (req: Request, res: Response): void => {
       const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === resTeam.currentEnigmaId.toString()));
       const editedTeam = resTeam;
       editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].attemptsNumber = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].attemptsNumber + 1;
+      editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score -= editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].scoreValue / 8;
       const { attemptsNumber } = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex];
       Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
         .exec()
