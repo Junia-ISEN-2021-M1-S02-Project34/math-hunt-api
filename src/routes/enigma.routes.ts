@@ -1,14 +1,15 @@
 import express from 'express';
 import controller from '../controllers/enigma.controller';
+import authJwt from '../middleware/auth_jwt.middleware';
 
 const router = express.Router();
 
-router.post('/create/enigma', controller.createEnigma);
-router.get('/get/enigmas', controller.getAllEnigmas);
-router.get('/get/enigma/:id', controller.getEnigmaById);
-router.get('/get/full/enigma/:id', controller.getFullEnigmaById);
-router.get('/get/enigmas/geoGroup/:id', controller.getEnigmasByGeoGroupId);
-router.put('/update/enigma/:id', controller.updateEnigma);
-router.delete('/delete/enigma/:id', controller.deleteEnigma);
+router.post('/create/enigma', [authJwt.verifyToken], controller.createEnigma);
+router.get('/get/enigmas', [authJwt.verifyToken], controller.getAllEnigmas);
+router.get('/get/enigma/:id', [authJwt.verifyToken], controller.getEnigmaById);
+router.get('/get/full/enigma/:id', [authJwt.verifyToken], controller.getFullEnigmaById);
+router.get('/get/enigmas/geoGroup/:id', [authJwt.verifyToken], controller.getEnigmasByGeoGroupId);
+router.put('/update/enigma/:id', [authJwt.verifyToken], controller.updateEnigma);
+router.delete('/delete/enigma/:id', [authJwt.verifyToken], controller.deleteEnigma);
 
 export default router;

@@ -1,16 +1,17 @@
 import express from 'express';
 import controller from '../controllers/team.controller';
+import authJwt from '../middleware/auth_jwt.middleware';
 
 const router = express.Router();
 
-router.post('/create/teams', controller.createTeams);
-router.get('/get/teams', controller.getAllTeams);
-router.get('/get/team/:id', controller.getTeamById);
-router.get('/get/teams/game/:id', controller.getTeamsByGameId);
-router.put('/update/team/:id', controller.updateTeam);
-router.put('/update/team/progression/:id', controller.updateTeamProgression);
-router.put('/update/team/used/hint/:id', controller.updateTeamUsedHint);
-router.put('/update/team/attemptsNumber/:id', controller.updateAttemptsNumber);
-router.delete('/delete/team/:id', controller.deleteTeam);
+router.post('/create/teams', [authJwt.verifyToken], controller.createTeams);
+router.get('/get/teams', [authJwt.verifyToken], controller.getAllTeams);
+router.get('/get/team/:id', [authJwt.verifyToken], controller.getTeamById);
+router.get('/get/teams/game/:id', [authJwt.verifyToken], controller.getTeamsByGameId);
+router.put('/update/team/:id', [authJwt.verifyToken], controller.updateTeam);
+router.put('/update/team/progression/:id', [authJwt.verifyToken], controller.updateTeamProgression);
+router.put('/update/team/used/hint/:id', [authJwt.verifyToken], controller.updateTeamUsedHint);
+router.put('/update/team/attemptsNumber/:id', [authJwt.verifyToken], controller.updateAttemptsNumber);
+router.delete('/delete/team/:id', [authJwt.verifyToken], controller.deleteTeam);
 
 export default router;

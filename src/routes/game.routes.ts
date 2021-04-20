@@ -1,15 +1,16 @@
 import express from 'express';
 import controller from '../controllers/game.controller';
+import authJwt from '../middleware/auth_jwt.middleware';
 
 const router = express.Router();
 
-router.post('/create/game', controller.createGame);
-router.get('/get/games', controller.getAllGames);
-router.get('/get/game/:id', controller.getGameById);
-router.get('/get/teams/ranking/game/:id', controller.getRanking);
-router.put('/update/game/:id', controller.updateGame);
-router.delete('/delete/game/:id', controller.deleteGame);
+router.post('/create/game', [authJwt.verifyToken], controller.createGame);
+router.get('/get/games', [authJwt.verifyToken], controller.getAllGames);
+router.get('/get/game/:id', [authJwt.verifyToken], controller.getGameById);
+router.get('/get/teams/ranking/game/:id', [authJwt.verifyToken], controller.getRanking);
+router.put('/update/game/:id', [authJwt.verifyToken], controller.updateGame);
+router.delete('/delete/game/:id', [authJwt.verifyToken], controller.deleteGame);
 
-router.put('/start/game/:id', controller.startGame);
+router.put('/start/game/:id', [authJwt.verifyToken], controller.startGame);
 
 export default router;

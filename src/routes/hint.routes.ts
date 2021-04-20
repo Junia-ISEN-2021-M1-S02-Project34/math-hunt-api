@@ -1,13 +1,14 @@
 import express from 'express';
 import controller from '../controllers/hint.controller';
+import authJwt from '../middleware/auth_jwt.middleware';
 
 const router = express.Router();
 
-router.post('/create/hint', controller.createHint);
-router.get('/get/hints', controller.getAllHints);
-router.get('/get/hint/:id', controller.getHintById);
-router.get('/get/hints/enigma/:id', controller.getHintsByEnigmaId);
-router.put('/update/hint/:id', controller.updateHint);
-router.delete('/delete/hint/:id', controller.deleteHint);
+router.post('/create/hint', [authJwt.verifyToken], controller.createHint);
+router.get('/get/hints', [authJwt.verifyToken], controller.getAllHints);
+router.get('/get/hint/:id', [authJwt.verifyToken], controller.getHintById);
+router.get('/get/hints/enigma/:id', [authJwt.verifyToken], controller.getHintsByEnigmaId);
+router.put('/update/hint/:id', [authJwt.verifyToken], controller.updateHint);
+router.delete('/delete/hint/:id', [authJwt.verifyToken], controller.deleteHint);
 
 export default router;
