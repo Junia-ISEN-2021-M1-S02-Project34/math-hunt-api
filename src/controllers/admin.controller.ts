@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
+import bcrypt from 'bcryptjs';
 import Admin from '../models/admin.model';
+import config from '../config/config';
 
 const createAdmin = async (req: Request, res: Response): Promise<Response> => {
   const {
@@ -8,7 +10,7 @@ const createAdmin = async (req: Request, res: Response): Promise<Response> => {
 
   const admin = new Admin({
     name,
-    password,
+    password: bcrypt.hashSync(password, config.server.auth.salt_rounds),
   });
 
   return admin.save()
