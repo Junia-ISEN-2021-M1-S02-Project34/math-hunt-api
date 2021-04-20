@@ -5,11 +5,11 @@ import config from '../config/config';
 
 const createAdmin = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, password,
+    username, password,
   } = req.body;
 
   const admin = new Admin({
-    name,
+    username,
     password: bcrypt.hashSync(password, config.server.auth.salt_rounds),
   });
 
