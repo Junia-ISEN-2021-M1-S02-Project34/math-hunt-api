@@ -117,6 +117,9 @@ const updateTeamProgression = (req: Request, res: Response): void => {
           const editedTeam = resTeam;
           if (isSuccess) {
             editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score += editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].scoreValue;
+            if (editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score < 0) {
+              editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = 0;
+            }
           } else {
             editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score = 0;
           }
@@ -191,7 +194,7 @@ const updateAttemptsNumber = (req: Request, res: Response): void => {
       const enigmaIndex = resTeam.progression[geoGroupIndex].enigmasProgression.findIndex(((pe) => pe.enigmaId.toString() === resTeam.currentEnigmaId.toString()));
       const editedTeam = resTeam;
       editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].attemptsNumber = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].attemptsNumber + 1;
-      editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score -= editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].scoreValue / 8;
+      editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].score -= Math.floor(editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex].scoreValue / 4);
       const { attemptsNumber } = editedTeam.progression[geoGroupIndex].enigmasProgression[enigmaIndex];
       Team.findByIdAndUpdate(req.params.id, editedTeam, { new: true })
         .exec()
