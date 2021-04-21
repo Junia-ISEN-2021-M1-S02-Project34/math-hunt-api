@@ -5,11 +5,11 @@ import authJwt from '../middleware/auth_jwt.middleware';
 
 const router = express.Router();
 
-router.post('/create/answer', [authJwt.verifyToken], controller.createAnswer);
+router.post('/create/answer', [authJwt.verifyToken, authJwt.admin], controller.createAnswer);
 router.get('/get/answers', [authJwt.verifyToken], controller.getAllAnswers);
 router.get('/get/answer/:id', [authJwt.verifyToken], controller.getAnswerById);
 router.get('/get/answer/enigma/:id', [authJwt.verifyToken], controller.getAnswerByEnigmaId);
-router.put('/update/answer/:id', [authJwt.verifyToken], controller.updateAnswer);
-router.delete('/delete/answer/:id', [authJwt.verifyToken], controller.deleteAnswer);
+router.put('/update/answer/:id', [authJwt.verifyToken, authJwt.admin], controller.updateAnswer);
+router.delete('/delete/answer/:id', [authJwt.verifyToken, authJwt.admin], controller.deleteAnswer);
 
 export default router;
