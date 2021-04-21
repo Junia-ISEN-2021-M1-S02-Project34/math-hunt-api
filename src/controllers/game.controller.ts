@@ -131,7 +131,9 @@ const stopGame = (req: Request, res: Response): void => {
 };
 
 const getRanking = (req: Request, res: Response): void => {
-  Team.find({ gameId: req.params.id })
+  Team.find({ gameId: req.params.id }, {
+    _id: 1, username: 1, score: 1, gameFinished: 1,
+  })
     .exec()
     .then((results) => {
       results.sort((a: ITeam, b: ITeam) => {
