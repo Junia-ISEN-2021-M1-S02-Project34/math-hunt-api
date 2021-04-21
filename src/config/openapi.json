@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "math-hunt-api",
+    "version": "1.0",
+    "description": "API du jeu de piste mathématique",
+    "contact": {
+      "name": "ISEN Lille"
+    }
+  },
+  "paths": {
+    "/answer/create/answer": {
+      "post": {
+        "summary": "Create New Answer",
+        "operationId": "post-answer",
+        "responses": {
+          "201": {
+            "description": "Answer Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    },
+                    "": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "enigmaId": {
+                    "type": "string"
+                  },
+                  "isMcq": {
+                    "type": "boolean"
+                  },
+                  "solution": {
+                    "type": "string"
+                  },
+                  "attemptsNumber": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "enigmaId",
+                  "isMcq",
+                  "solution",
+                  "attemptsNumber"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": "Post the necessary fields for the API to create a new answer."
+        },
+        "description": "Create a new answer.",
+        "tags": [
+          "/answer"
+        ]
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "Answer": {
+        "title": "Answer",
+        "type": "object",
+        "description": "",
+        "x-examples": {},
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": ""
+          },
+          "enigmaId": {
+            "type": "string"
+          },
+          "isMcq": {
+            "type": "boolean"
+          },
+          "solution": {
+            "type": "string",
+            "format": "email"
+          },
+          "attemptsNumber": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "_id",
+          "enigmaId",
+          "isMcq",
+          "solution",
+          "attemptsNumber"
+        ]
+      }
+    },
+    "securitySchemes": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": ""
+    }
+  ],
+  "security": [],
+  "tags": [
+    {
+      "name": "/answer"
+    }
+  ]
+}
