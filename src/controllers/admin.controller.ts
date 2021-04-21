@@ -30,7 +30,7 @@ const updateAdmin = (req: Request, res: Response): void => {
 
   const admin = new Admin({
     username: req.params.username,
-    password,
+    password: bcrypt.hashSync(password, config.server.auth.salt_rounds),
   });
 
   Admin.updateOne({ username: req.params.username }, admin)
