@@ -28,12 +28,7 @@ const updateAdmin = (req: Request, res: Response): void => {
     password,
   } = req.body;
 
-  const admin = new Admin({
-    username: req.params.username,
-    password: bcrypt.hashSync(password, config.server.auth.salt_rounds),
-  });
-
-  Admin.updateOne({ username: req.params.username }, admin)
+  Admin.updateOne({ username: req.params.username }, { password: bcrypt.hashSync(password) })
     .exec()
     .then(() => res.status(200).json({}))
     .catch((e) => res.status(500).json({
