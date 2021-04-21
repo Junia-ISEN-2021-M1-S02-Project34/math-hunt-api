@@ -12,5 +12,6 @@ router.put('/update/game/:id', [authJwt.verifyToken, authJwt.admin], controller.
 router.delete('/delete/game/:id', [authJwt.verifyToken, authJwt.admin], controller.deleteGame);
 
 router.put('/start/game/:id', [authJwt.verifyToken, authJwt.admin], controller.startGame);
+router.put('/stop/game/:id', [authJwt.verifyToken, authJwt.admin], controller.stopGame);
 
 export default router;

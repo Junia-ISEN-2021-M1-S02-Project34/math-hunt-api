@@ -85,10 +85,40 @@ const deleteGame = (req: Request, res: Response): void => {
 };
 
 const startGame = (req: Request, res: Response): void => {
+  Game.findById(req.params.id)
+    .exec()
+    .then((gameRes) => {
+      let game = new Game();
+      if (gameRes.startDate) {
+        game = new Game({
+          _id: req.params.id,
+          isStarted: true,
+        });
+      } else {
+        game = new Game({
+          _id: req.params.id,
+          startDate: new Date(),
+          isStarted: true,
+        });
+      }
+      Game.updateOne({ _id: req.params.id }, game)
+        .exec()
+        .then(() => res.status(200).json({}))
+        .catch((e) => res.status(500).json({
+          error: e.message,
+          e,
+        }));
+    })
+    .catch((e) => res.status(500).json({
+      error: e.message,
+      e,
+    }));
+};
+
+const stopGame = (req: Request, res: Response): void => {
   const game = new Game({
     _id: req.params.id,
-    startDate: new Date(),
-    isStarted: true,
+    isStarted: false,
   });
 
   Game.updateOne({ _id: req.params.id }, game)
@@ -121,5 +151,5 @@ const getRanking = (req: Request, res: Response): void => {
 };
 
 export default {
-  createGame, getGameById, getAllGames, updateGame, deleteGame, startGame, getRanking,
+  createGame, getGameById, getAllGames, updateGame, deleteGame, startGame, stopGame, getRanking,
 };
