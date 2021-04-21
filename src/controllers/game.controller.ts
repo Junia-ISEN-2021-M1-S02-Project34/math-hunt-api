@@ -135,8 +135,8 @@ const getRanking = (req: Request, res: Response): void => {
     .exec()
     .then((results) => {
       results.sort((a: ITeam, b: ITeam) => {
-        if (a.score < b.score) { return -1; }
-        if (a.score > b.score) { return 1; }
+        if (a.score > b.score) { return -1; }
+        if (a.score < b.score) { return 1; }
         return 0;
       });
       res.status(200).json({
