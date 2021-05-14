@@ -8,6 +8,7 @@ const GeoGroupSchema: Schema = new Schema(
     positionY: { type: Number, required: true },
     radius: { type: Number, required: true },
     pictureUrl: { type: String, required: true },
+    order: { type: Number, required: true },
   },
   {
     timestamps: true,

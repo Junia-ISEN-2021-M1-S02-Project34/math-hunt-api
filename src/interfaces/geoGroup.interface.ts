@@ -7,4 +7,5 @@ export default interface IGeoGroup extends Document {
   positionY: number;
   radius: number;
   pictureUrl: string;
+  order: number;
 }
