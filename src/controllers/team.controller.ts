@@ -19,9 +19,9 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
       .exec()
       .then((enigmas) => {
         const teams = [];
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        const generatedProgressions = generateRandomProgression(geoGroups, enigmas, numberOfTeams) as IEnigmaStatus[][];
         for (let i = 0; i < numberOfTeams; i++) {
-          // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          const generatedProgression = generateRandomProgression(geoGroups, enigmas) as IEnigmaStatus[];
           // eslint-disable-next-line no-console
           teams.push(new Team({
             _id: new mongoose.Types.ObjectId(),
@@ -30,9 +30,9 @@ const createTeams = async (req: Request, res: Response): Promise<Response> => {
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             password: generatePassword(),
             gameId,
-            progression: generatedProgression,
-            currentEnigmaId: generatedProgression[0].enigmasProgression[0].enigmaId,
-            currentGeoGroupId: generatedProgression[0].geoGroupId,
+            progression: generatedProgressions[i],
+            currentEnigmaId: generatedProgressions[i][0].enigmasProgression[0].enigmaId,
+            currentGeoGroupId: generatedProgressions[i][0].geoGroupId,
           }));
         }
         // eslint-disable-next-line no-console
@@ -250,61 +250,68 @@ function generateRandomId() {
   return retVal;
 }
 
-function shuffle(array: Array<IGeoGroup>) {
-  let currentIndex = array.length; let temporaryValue; let
-    randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex !== 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    // eslint-disable-next-line no-param-reassign
-    array[currentIndex] = array[randomIndex];
-    // eslint-disable-next-line no-param-reassign
-    array[randomIndex] = temporaryValue;
+function generateRandomArrayKeepingOrder(array: any[]): any[] {
+  const orders = [];
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0, len = array.length; i < len; i++) {
+    const newArr: any[] = [];
+    newArr.push(array[i]);
+    for (let j = 1; j < array.length; j++) {
+      newArr.push(array[(i + j) % len]);
+    }
+    orders.push(newArr);
   }
-
-  return array;
+  return orders[Math.floor(Math.random() * array.length)];
 }
 
-const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[]): IEnigmaStatus[] => {
-  // eslint-disable-next-line no-underscore-dangle
-  shuffle(geoGroups);
-  const progressionToReturn = [];
-  // eslint-disable-next-line no-restricted-syntax
-  for (const g of geoGroups) {
-    // eslint-disable-next-line no-underscore-dangle
-    const enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId.toString() === g._id.toString());
-    enigmasOfGeoGroup.sort((a, b) => a.order - b.order);
-    const enigmasOfProgression = [];
+// eslint-disable-next-line max-len
+const generateRandomProgression = (geoGroups: IGeoGroup[], enigmas: IEnigma[], numberOfTeams: number): IEnigmaStatus[][] => {
+  const toReturn = [];
+  /* loop on geoGroups as a circle, to keep order
+  but every teams going to start in a different place */
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0, len = geoGroups.length; i < numberOfTeams; i++) {
+    const newGeoGroupsOrder = [];
+    newGeoGroupsOrder.push(geoGroups[(i + len) % len]);
+    // eslint-disable-next-line no-plusplus
+    for (let j = 1; j < geoGroups.length; j++) {
+      newGeoGroupsOrder.push(geoGroups[(i + j) % len]);
+    }
+    // add geo group order to team
+    const progressionToReturn = [];
     // eslint-disable-next-line no-restricted-syntax
-    for (const e of enigmasOfGeoGroup) {
-      if (e.isActive) {
-        enigmasOfProgression.push({
+    for (const g of newGeoGroupsOrder) {
+      // eslint-disable-next-line no-underscore-dangle
+      let enigmasOfGeoGroup = enigmas.filter((e) => e.geoGroupId.toString() === g._id.toString());
+      enigmasOfGeoGroup.sort((a, b) => a.order - b.order);
+      enigmasOfGeoGroup = generateRandomArrayKeepingOrder(enigmasOfGeoGroup);
+      const enigmasOfProgression = [];
+      // eslint-disable-next-line no-restricted-syntax
+      for (const e of enigmasOfGeoGroup) {
+        if (e.isActive) {
+          enigmasOfProgression.push({
+            // eslint-disable-next-line no-underscore-dangle
+            enigmaId: e._id,
+            enigmaName: e.name,
+            done: false,
+            score: 0,
+            scoreValue: e.scoreValue,
+            usedHintsIds: null,
+          });
+        }
+      }
+      if (enigmasOfProgression.length > 0) {
+        progressionToReturn.push({
           // eslint-disable-next-line no-underscore-dangle
-          enigmaId: e._id,
-          enigmaName: e.name,
-          done: false,
-          score: 0,
-          scoreValue: e.scoreValue,
-          usedHintsIds: null,
-        });
+          geoGroupId: g._id,
+          geoGroupName: g.name,
+          enigmasProgression: enigmasOfProgression,
+          geoGroupScore: 0,
+          geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
+        } as IEnigmaStatus);
       }
     }
-    if (enigmasOfProgression.length > 0) {
-      progressionToReturn.push({
-        // eslint-disable-next-line no-underscore-dangle
-        geoGroupId: g._id,
-        geoGroupName: g.name,
-        enigmasProgression: enigmasOfProgression,
-        geoGroupScore: 0,
-        geoGroupScoreValue: enigmasOfProgression.reduce((prev, cur) => prev + cur.scoreValue, 0),
-      } as IEnigmaStatus);
-    }
+    toReturn.push(progressionToReturn);
   }
-  return progressionToReturn;
+  return toReturn;
 };
