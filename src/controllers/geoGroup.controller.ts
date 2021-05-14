@@ -4,7 +4,7 @@ import GeoGroup from '../models/geoGroup.model';
 
 const createGeoGroup = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, positionX, positionY, radius, pictureUrl,
+    name, positionX, positionY, radius, pictureUrl, order,
   } = req.body;
 
   const geoGroup = new GeoGroup({
@@ -14,6 +14,7 @@ const createGeoGroup = async (req: Request, res: Response): Promise<Response> =>
     positionY,
     radius,
     pictureUrl,
+    order,
   });
 
   return geoGroup.save()
@@ -49,7 +50,7 @@ const getAllGeoGroups = (req: Request, res: Response): void => {
 
 const updateGeoGroup = (req: Request, res: Response): void => {
   const {
-    name, positionX, positionY, radius, pictureUrl,
+    name, positionX, positionY, radius, pictureUrl, order,
   } = req.body;
 
   const geoGroup = new GeoGroup({
@@ -59,6 +60,7 @@ const updateGeoGroup = (req: Request, res: Response): void => {
     positionY,
     radius,
     pictureUrl,
+    order,
   });
 
   GeoGroup.updateOne({ _id: req.params.id }, geoGroup)
