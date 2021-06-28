@@ -18,7 +18,7 @@ const createGeoGroup = async (req: Request, res: Response): Promise<Response> =>
         positionY,
         radius,
         pictureUrl,
-        order: result.order,
+        order: (result.order + 1),
       });
 
       return geoGroup.save()
