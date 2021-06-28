@@ -4,21 +4,30 @@ import GeoGroup from '../models/geoGroup.model';
 
 const createGeoGroup = async (req: Request, res: Response): Promise<Response> => {
   const {
-    name, positionX, positionY, radius, pictureUrl, order,
+    name, positionX, positionY, radius, pictureUrl,
   } = req.body;
 
-  const geoGroup = new GeoGroup({
-    _id: new mongoose.Types.ObjectId(),
-    name,
-    positionX,
-    positionY,
-    radius,
-    pictureUrl,
-    order,
-  });
+  return GeoGroup.findOne()
+    .sort('-order')
+    .exec()
+    .then((result) => {
+      const geoGroup = new GeoGroup({
+        _id: new mongoose.Types.ObjectId(),
+        name,
+        positionX,
+        positionY,
+        radius,
+        pictureUrl,
+        order: result.order,
+      });
 
-  return geoGroup.save()
-    .then((result) => res.status(201).json(result))
+      return geoGroup.save()
+        .then((save_result) => res.status(201).json(save_result))
+        .catch((e) => res.status(500).json({
+          error: e.message,
+          e,
+        }));
+    })
     .catch((e) => res.status(500).json({
       error: e.message,
       e,
